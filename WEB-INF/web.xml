@@ -41,4 +41,15 @@
     <url-pattern>/main</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>SearchServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/search.jsp</jsp-file>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+
 </web-app>
