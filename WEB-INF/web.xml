@@ -34,8 +34,6 @@
     <servlet-name>FabFlixServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/landPage.jsp</jsp-file>
   </servlet>
-
-
   <servlet-mapping>
     <servlet-name>FabFlixServlet</servlet-name>
     <url-pattern>/main</url-pattern>
@@ -45,11 +43,18 @@
     <servlet-name>SearchServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/search.jsp</jsp-file>
   </servlet>
-
-
   <servlet-mapping>
     <servlet-name>SearchServlet</servlet-name>
     <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/browse.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseServlet</servlet-name>
+    <url-pattern>/browse</url-pattern>
   </servlet-mapping>
 
 </web-app>
