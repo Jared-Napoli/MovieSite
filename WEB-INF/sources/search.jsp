@@ -6,6 +6,6 @@
 </HEAD>
 
 <BODY BGCOLOR="#FDF5E6">
-	<H1 align="center">Good Search Buddy!</H1>
+	<H1 align="center">Good Search Buddy WOOO!</H1>
 </BODY>
 </HTML>
