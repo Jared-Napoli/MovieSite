@@ -19,7 +19,7 @@
     out.println("There are "+metadata.getColumnCount()+" columns <br>");
     for (int i=1; i<=metadata.getColumnCount(); i++){
       out.println("Type of column "+i+" is " + 
-		  metadata.getColumnTypeName(i) + "<br>");
+      metadata.getColumnTypeName(i) + "<br>");
     }
     while (result.next()){
       out.print("First_name  = "+result.getString(2));

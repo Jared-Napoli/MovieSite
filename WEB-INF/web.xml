@@ -32,7 +32,7 @@
 
   <servlet>
     <servlet-name>FabFlixServlet</servlet-name>
-    <servlet-class>FabFlix</servlet-class>
+    <jsp-file>/WEB-INF/sources/landPage.jsp</jsp-file>
   </servlet>
 
 
