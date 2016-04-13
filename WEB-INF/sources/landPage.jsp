@@ -5,14 +5,17 @@
   <TITLE>Home Page</TITLE>
 </HEAD>
 
-<center>
+<td>
+<CENTER>
 <BODY BGCOLOR="#FDF5E6">
 	<H1 align="center">Welcome USER!</H1>
 	<FORM ACTION="/FabFlix/search"
       METHOD="get">
-  Search Query: <INPUT TYPE="TEXT" NAME="search_query"><BR>
-    <INPUT TYPE="SUBMIT" VALUE="Submit Order">
-  </CENTER>
+    <INPUT TYPE="SUBMIT" VALUE="Search"></INPUT></FORM>OR<FORM ACTION="/FabFlix/browse"
+      METHOD="get">
+    <INPUT TYPE="SUBMIT" VALUE="Browse"></INPUT>
 </FORM>
+</CENTER>
+</TD>
 </BODY>
 </HTML>
