@@ -6,7 +6,7 @@
 %>
 
 <h3>hello world</h3><br>
-<%/* 
+<%/*  
     Class.forName("com.mysql.jdbc.Driver").newInstance();
     Connection connection =
       DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
