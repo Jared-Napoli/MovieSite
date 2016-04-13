@@ -57,4 +57,13 @@
     <url-pattern>/browse</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>ResultServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/result.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResultServlet</servlet-name>
+    <url-pattern>/search/result</url-pattern>
+  </servlet-mapping>
+
 </web-app>
