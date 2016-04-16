@@ -5,8 +5,8 @@
   <TITLE>Home Page</TITLE>
 </HEAD>
 <%
-	request.getSession().setAttribute("username", request.getParameter("username"));
-	request.getSession().setAttribute("password", request.getParameter("password"));
+	//request.getSession().setAttribute("username", request.getParameter("username"));
+	//request.getSession().setAttribute("password", request.getParameter("password"));
 %>
 <td>
 <CENTER>

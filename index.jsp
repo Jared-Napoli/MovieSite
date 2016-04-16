@@ -2,7 +2,8 @@
  javax.sql.*,
  java.io.IOException,
  javax.servlet.http.*,
- javax.servlet.*"
+ javax.servlet.*,
+ SQLClasses.*"
 %>
 
 <h3>hello world</h3><br>
@@ -37,7 +38,7 @@
 <BODY BGCOLOR="#FDF5E6">
 <H1 ALIGN="CENTER">Welcome to FabFlix Asshole!</H1>
 
-<FORM ACTION="/FabFlix/main"
+<FORM ACTION="/FabFlix/verify"
       METHOD="POST">
   Username: <INPUT TYPE="TEXT" NAME="username"><BR>
 

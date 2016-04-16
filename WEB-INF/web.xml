@@ -31,6 +31,14 @@
 
 
   <servlet>
+    <servlet-name>VerifyServlet</servlet-name>
+    <servlet-class>Verify</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerifyServlet</servlet-name>
+    <url-pattern>/verify</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>FabFlixServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/landPage.jsp</jsp-file>
   </servlet>
