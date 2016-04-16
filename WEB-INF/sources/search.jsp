@@ -7,7 +7,7 @@
 
 <BODY BGCOLOR="#FDF5E6">
 	<H1 align="center">Good Search Buddy WOOO!</H1>
-	<FORM ACTION="/FabFlix/search/result" METHOD="get">
+	<FORM ACTION="/fabflix/search/result" METHOD="get">
 		Title: <INPUT TYPE="TEXT" NAME="title">
 		<br>
 		Year: <INPUT TYPE="TEXT" NAME="year">

@@ -12,9 +12,9 @@
 <CENTER>
 <BODY BGCOLOR="#FDF5E6">
 	<H1 align="center">Welcome USER!</H1>
-	<FORM ACTION="/FabFlix/search"
+	<FORM ACTION="/fabflix/search"
       METHOD="get">
-    <INPUT TYPE="SUBMIT" VALUE="Search"></INPUT></FORM>OR<FORM ACTION="/FabFlix/browse"
+    <INPUT TYPE="SUBMIT" VALUE="Search"></INPUT></FORM>OR<FORM ACTION="/fabflix/browse"
       METHOD="get">
     <INPUT TYPE="SUBMIT" VALUE="Browse"></INPUT>
 </FORM>

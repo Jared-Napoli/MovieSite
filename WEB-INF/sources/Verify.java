@@ -30,13 +30,13 @@ public class Verify extends HttpServlet {
     if(myCustomer == null)
     {
       System.out.println("null customer");
-      response.sendRedirect("/FabFlix");
+      response.sendRedirect("/fabflix");
     }
     else
     {
       System.out.println("good customer");
       request.getSession().setAttribute("customer", (Object)myCustomer);
-      response.sendRedirect("/FabFlix/main");
+      response.sendRedirect("/fabflix/main");
     }
     }
     catch (java.lang.Exception ex) {

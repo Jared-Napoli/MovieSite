@@ -38,7 +38,7 @@
 <BODY BGCOLOR="#FDF5E6">
 <H1 ALIGN="CENTER">Welcome to FabFlix Asshole!</H1>
 
-<FORM ACTION="/FabFlix/verify"
+<FORM ACTION="/fabflix/verify"
       METHOD="POST">
   Username: <INPUT TYPE="TEXT" NAME="username"><BR>
 
