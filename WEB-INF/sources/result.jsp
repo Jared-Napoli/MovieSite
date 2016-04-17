@@ -18,22 +18,22 @@
 	<H1 align="center">Good Results Buddy WOO!</H1><br>
 	<% Customer customer = new Customer();
 	customer = (Customer)request.getSession().getAttribute("customer");
-	System.out.println("this email" + customer.email); %>
+	// System.out.println("this email" + customer.email); 
+	%>
 	<H2 align="center">User Name from Session: <%=customer.email%></H2>
 
 	<H3>List of Movies </H3><br>
-	<table style"border: solid"/>
+	<table style"border: solid" border="1"/>
 <%
-		Movie movie = new Movie(10, "string", 10, "string", "string", "string");
-		List<movie> movies = movie.searchMovie("string", 10, "string", "string", "string");
-
+		Movie sampleMovie = new Movie(10, "string", 10, "string", "string", "string");
+		List<Movie> movies = sampleMovie.searchMovie("string", 10, "string", "string", "string");
+		for(Movie movie: movies) {
 %>
-		<%=movies.size()%>
 		<tr>
 			<%@ include file="movierowview.jsp" %>
 		</tr>
 <%
-	
+	}
 %>
 </BODY>
 </HTML>
