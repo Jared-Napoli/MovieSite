@@ -6,7 +6,7 @@
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<%@page import="SQLClasses.Customer"%>
+<%@page import="SQLClasses.*"%>
 
 <HTML>
 <HEAD>
@@ -20,5 +20,16 @@
 	System.out.println("this email" + customer.email); %>
 	<H2 align="center">User Name from Session: <%=customer.email%></H2>
 
+	<H3>List of Movies </H3><br>
+	<table style"border: solid"/>
+<%
+		for(Movie movie: movies) { 
+%>
+		<tr>
+			<%@ include file="movierowview.jsp" %>
+		</tr>
+<%
+	}
+%>
 </BODY>
 </HTML>
