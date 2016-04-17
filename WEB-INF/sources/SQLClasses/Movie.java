@@ -33,7 +33,7 @@ public class Movie {
 
 
 
-	public static Movie searchMovie(String m_title, Integer m_year, String m_director,
+	public static List<Movie> searchMovie(String m_title, Integer m_year, String m_director,
 	                                String f_name, String l_name) {
 		Movie movie = new Movie();
 		try {
@@ -47,8 +47,10 @@ public class Movie {
 			// Perform the query
 			ResultSet rs = statement.executeQuery(query);
 			System.out.println("After query");
+
+			List<Movie> movieList = new List<Movie>();
 			// Iterate through each row of rs
-			if (rs.next()) {
+			while (rs.next()) {
 				movie = new Movie(
 				    rs.getInt("id"),
 				    rs.getString("title"),
@@ -56,6 +58,7 @@ public class Movie {
 				    rs.getString("director"),
 				    rs.getString("banner_url"),
 				    rs.getString("trailer_url"));
+				movielist.append(movie);
 			}
 			System.out.println("After initialization");
 			rs.close();

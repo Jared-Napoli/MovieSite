@@ -2,7 +2,8 @@
  javax.sql.*,
  java.io.IOException,
  javax.servlet.http.*,
- javax.servlet.*"
+ javax.servlet.*,
+ java.util.*"
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
@@ -23,13 +24,16 @@
 	<H3>List of Movies </H3><br>
 	<table style"border: solid"/>
 <%
-		for(Movie movie: movies) { 
+		Movie movie = new Movie(10, "string", 10, "string", "string", "string");
+		List<movie> movies = movie.searchMovie("string", 10, "string", "string", "string");
+
 %>
+		<%=movies.size()%>
 		<tr>
 			<%@ include file="movierowview.jsp" %>
 		</tr>
 <%
-	}
+	
 %>
 </BODY>
 </HTML>
