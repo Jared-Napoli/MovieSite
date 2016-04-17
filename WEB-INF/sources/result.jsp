@@ -15,7 +15,7 @@
 	<TITLE>Result Page</TITLE>
 </HEAD>
 
-<BODY BGCOLOR="#FDF5E6">
+<BODY BGCOLOR="cccccc">
 	<H1 align="center">Good Results Buddy WOO!</H1><br>
 	<% Customer customer = new Customer();
 	customer = (Customer)request.getSession().getAttribute("customer");
