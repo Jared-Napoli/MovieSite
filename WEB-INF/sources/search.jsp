@@ -2,7 +2,8 @@
 
 <HTML>
 <HEAD>
-  <TITLE>Search Page</TITLE>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+ 	<TITLE>Search Page</TITLE>
 </HEAD>
 
 <BODY BGCOLOR="#FDF5E6">

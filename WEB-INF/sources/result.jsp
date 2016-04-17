@@ -10,6 +10,7 @@
 
 <HTML>
 <HEAD>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
 	<TITLE>Result Page</TITLE>
 </HEAD>
 
