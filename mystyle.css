@@ -5,3 +5,7 @@ body {
 	background-repeat:no-repeat;
 	background-size:100%;
 }
+
+table {
+	background-color: white;
+}
