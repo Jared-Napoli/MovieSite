@@ -43,7 +43,7 @@ public class Movie {
 			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
 			// Declare our statement
 			Statement statement = dbcon.createStatement();
-			String query = "SELECT * from movies";
+			String query = "SELECT * from movies where title like \"" + m_title + "%\"";
 
 			// Perform the query
 			ResultSet rs = statement.executeQuery(query);

@@ -27,7 +27,7 @@
 	<table align="center" style"border: solid" border="1"/>
 <%
 		Movie sampleMovie = new Movie(10, "string", 10, "string", "string", "string");
-		List<Movie> movies = sampleMovie.searchMovie("string", 10, "string", "string", "string");
+		List<Movie> movies = sampleMovie.searchMovie(request.getParameter("title"), 10, "string", "string", "string");
 		for(Movie movie: movies) {
 %>
 		<tr>
