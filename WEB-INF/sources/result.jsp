@@ -14,9 +14,9 @@
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
 	<TITLE>Result Page</TITLE>
 </HEAD>
-
 <BODY BGCOLOR="cccccc">
 	<H1 align="center">Good Results Buddy WOO!</H1><br>
+	<%@include file="verify.jsp"%>
 	<% Customer customer = new Customer();
 	customer = (Customer)request.getSession().getAttribute("customer");
 	// System.out.println("this email" + customer.email); 
