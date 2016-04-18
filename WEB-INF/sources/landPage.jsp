@@ -20,6 +20,10 @@
     <INPUT TYPE="SUBMIT" VALUE="Search"></INPUT></FORM>OR<FORM ACTION="/fabflix/browse"
       METHOD="get">
     <INPUT TYPE="SUBMIT" VALUE="Browse"></INPUT>
+</FORM><br>
+<FORM ACTION="/fabflix/single_star"
+      METHOD="get">
+    <INPUT TYPE="SUBMIT" VALUE="Single Star"></INPUT>
 </FORM>
 </CENTER>
 </td>

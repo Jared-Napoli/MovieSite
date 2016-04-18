@@ -18,13 +18,30 @@
 
 	<BODY BGCOLOR="CCCCCC">
 	<%@include file="verify.jsp"%>
-	<H1 align="center">Good Results Buddy WOO!</H1><br>
-	<% SingleStar star = new SingleStar();
-	Integer id = 907007;
-	star = SingleStar.getSingleStarAttributes(id);
-	// System.out.println("this email" + customer.email); 
-	%>
-	<H2 align="center">User Name from Session: <%=star.first_name%></H2>
-</BODY>
+	<%
+	SingleStar star = new SingleStar();
 
+	Integer id = 907000;
+	star = SingleStar.getSingleStarAttributes(id); 
+	%>
+	<H1 align="center"><%=star.first_name%> <%=star.last_name%><br></H1>
+	<CENTER>
+		<img src="photo_url" alt="											Picture failed to load." align="middle" width="256" height="256">
+	<H3 align="center"><%=star.id%><br> <%=star.dob%><br> <%=star.photo_url%><br></H3>
+	<table align="center" style"border: solid" border="1"/>
+	<%
+		List<Movie> movies = Movie.listOfMoviesGivenFirstAndLastName("Samuel", "Jackson");
+		for(Movie movie: movies) {
+%>
+		<tr>
+		<td>
+			<H3><%=movie.title%></H3>
+		</td>
+	</tr>
+<%
+	}
+%>
+	
+</BODY>
+</CENTER>
 </HTML>
