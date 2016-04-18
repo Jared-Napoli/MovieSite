@@ -31,11 +31,17 @@
 
 
   <servlet>
+    <servlet-name>VerifyServlet</servlet-name>
+    <servlet-class>Verify</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerifyServlet</servlet-name>
+    <url-pattern>/verify</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>FabFlixServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/landPage.jsp</jsp-file>
   </servlet>
-
-
   <servlet-mapping>
     <servlet-name>FabFlixServlet</servlet-name>
     <url-pattern>/main</url-pattern>
@@ -45,11 +51,27 @@
     <servlet-name>SearchServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/search.jsp</jsp-file>
   </servlet>
-
-
   <servlet-mapping>
     <servlet-name>SearchServlet</servlet-name>
     <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/single_star.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseServlet</servlet-name>
+    <url-pattern>/browse</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ResultServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/result.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResultServlet</servlet-name>
+    <url-pattern>/search/result</url-pattern>
   </servlet-mapping>
 
 </web-app>

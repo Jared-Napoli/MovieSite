@@ -58,6 +58,8 @@ public class Customer {
 				    rs.getString("address"),
 				    rs.getString("email"),
 				    rs.getString("password"));
+				System.out.println("rs.next()");
+				return customer;
 			}
 
 			rs.close();
@@ -70,6 +72,6 @@ public class Customer {
 			}  // end while
 			return null;
 		}  // end catch SQLException
-		return customer;
+		return null;
 	}
 }
