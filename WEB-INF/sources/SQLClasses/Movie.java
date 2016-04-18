@@ -44,8 +44,28 @@ public class Movie {
 			// D2eclare our statement
 			Statement statement = dbcon.createStatement();
 			String query = "";
+			String star_query = "";
 			Boolean firstFound = false;
 
+			if(f_name != "") {
+				query = query.concat("SELECT * from movies where id in (select movie_id from stars_in_movies where star_id in"
+				+ " (select id from stars where first_name like \"" + f_name + "%\"");
+				firstFound = true;
+			}
+
+
+			if(l_name != "") {
+				if (firstFound) 
+					query = query.concat(" AND last_name like \"" + l_name + "%\"))");
+				else {
+					query = query.concat("select * from movies where id in (select movie_id from stars_in_movies where star_id in" 
+					+ " (select id from stars where last_name like \"" + l_name + "%\"))");
+				}
+			} else {
+				query = query.concat("))");
+			}
+
+/*
 			if(m_title != "") {
 				query = query.concat("SELECT * from movies where title like \"" + m_title + "%\"");
 				firstFound = true;
@@ -66,6 +86,21 @@ public class Movie {
 					query = query.concat("SELECT * from movies where director like \"" + m_director + "%\"");
 				firstFound = true;
 			}
+
+			firstFound = false;
+
+			if(f_name != "" ) {
+				star_query = star_query.concat("SELECT * from stars where first_name like \"" + f_name + "%\"");
+				firstFound = true;
+			}
+
+			if(l_name != "" ) {
+				if(firstFound) 
+					star_query = star_query.concat(" AND last_name like \"" + l_name + "%\"");
+				else
+					star_query = star_query.concat("SELECT * from stars where last_name like \"" + l_name + "%\"");
+			}
+*/
 
 			// Perform the query
 			ResultSet rs = statement.executeQuery(query);
