@@ -49,6 +49,7 @@
       {
         System.out.println("url != null");
         url = (String)request.getSession().getAttribute("url");
+        request.getSession().setAttribute("url", (Object) null);
       }
 %>
 <FORM ACTION=<%=url%>

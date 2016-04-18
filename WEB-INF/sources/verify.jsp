@@ -32,17 +32,18 @@
 	    	//System.out.println(myCustomer.first_name);
 	    }
 	    String url = (String)request.getRequestURL().toString();
-	    request.getSession().setAttribute("url", (Object)url);
 	    if(myCustomer == null)
 	    {
 		  //request.getSession().setAttribute("url", (Object)url);
 	      System.out.println("null customer");
+	      request.getSession().setAttribute("url", (Object)url);
 	      response.sendRedirect("/fabflix");
 	    }
 	    else
 	    {
 	      System.out.println("good customer");
 	      request.getSession().setAttribute("customer", (Object)myCustomer);
+	      request.getSession().setAttribute("url", null);
 	      //response.sendRedirect(url);
 	    }
 	/*    }
