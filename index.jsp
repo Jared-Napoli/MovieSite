@@ -35,15 +35,30 @@
   <link rel="stylesheet" type="text/css" href="mystyle.css">
   <TITLE>FabFlix</TITLE>
 </HEAD>
-
-<BODY>
-<H1 ALIGN="CENTER">Welcome to FabFlix!</H1>
 <CENTER>
-<FORM ACTION="/fabflix/verify" METHOD="POST">
+<BODY BGCOLOR="#FDF5E6">
+<H1 ALIGN="CENTER">Welcome to FabFlix Asshole!</H1>
+<%
+    String url = "/fabflix/main";
+    if(request.getSession().getAttribute("url") == null)
+      {
+        System.out.println("url = null");
+        url = "/fabflix/main";
+      }
+    else
+      {
+        System.out.println("url != null");
+        url = (String)request.getSession().getAttribute("url");
+      }
+%>
+<FORM ACTION=<%=url%>
+      METHOD="POST">
   Username: <INPUT TYPE="TEXT" NAME="username"><BR>
 
   Password: <INPUT TYPE="PASSWORD" NAME="password"><BR>
+  <CENTER>
     <INPUT TYPE="SUBMIT" VALUE="Submit Order">
+  </CENTER>
 </FORM>
 </CENTER>
 </BODY>
@@ -51,4 +66,3 @@
 
 </body>
 </html>
-

@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
  	<TITLE>Search Page</TITLE>
 </HEAD>
-
+<%@include file="verify.jsp"%>
 <BODY BGCOLOR="#FDF5E6">
 	<H1 align="center">Good Search Buddy WOOO!</H1>
 	<FORM ACTION="/fabflix/search/result" METHOD="get">
