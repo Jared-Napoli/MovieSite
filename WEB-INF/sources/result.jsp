@@ -27,7 +27,15 @@
 	<table align="center" style"border: solid" border="1"/>
 <%
 		Movie sampleMovie = new Movie(10, "string", 10, "string", "string", "string");
-		List<Movie> movies = sampleMovie.searchMovie(request.getParameter("title"), 10, "string", "string", "string");
+		String m_title = request.getParameter("title");
+		String m_director = request.getParameter("director");
+		int m_year = 0;
+
+
+		if(request.getParameter("year") != "")
+			m_year = Integer.parseInt(request.getParameter("year"));
+
+		List<Movie> movies = sampleMovie.searchMovie(m_title, m_year, m_director, "string", "string");
 		for(Movie movie: movies) {
 %>
 		<tr>

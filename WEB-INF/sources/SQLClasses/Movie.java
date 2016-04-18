@@ -41,9 +41,31 @@ public class Movie {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 
 			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
-			// Declare our statement
+			// D2eclare our statement
 			Statement statement = dbcon.createStatement();
-			String query = "SELECT * from movies where title like \"" + m_title + "%\"";
+			String query = "";
+			Boolean firstFound = false;
+
+			if(m_title != "") {
+				query = query.concat("SELECT * from movies where title like \"" + m_title + "%\"");
+				firstFound = true;
+			}
+
+			if(m_year != 0) {
+				if (firstFound)
+					query = query.concat(" AND year=\"" + m_year + "\"");
+				else
+					query = query.concat("SELECT * from movies where year=\"" + m_year + "\"");
+				firstFound = true;
+			}
+
+			if(m_director != "") {
+				if (firstFound)
+					query = query.concat(" AND director like \"" + m_director + "%\"");
+				else
+					query = query.concat("SELECT * from movies where director like \"" + m_director + "%\"");
+				firstFound = true;
+			}
 
 			// Perform the query
 			ResultSet rs = statement.executeQuery(query);
