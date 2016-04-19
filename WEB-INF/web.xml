@@ -58,7 +58,7 @@
 
   <servlet>
     <servlet-name>BrowseServlet</servlet-name>
-    <jsp-file>/WEB-INF/sources/browse.jsp</jsp-file>
+    <jsp-file>/WEB-INF/sources/single_star.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>BrowseServlet</servlet-name>
@@ -72,15 +72,6 @@
   <servlet-mapping>
     <servlet-name>ResultServlet</servlet-name>
     <url-pattern>/search/result</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>BrowseResultServlet</servlet-name>
-    <jsp-file>/WEB-INF/sources/browse_result.jsp</jsp-file>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>BrowseResultServlet</servlet-name>
-    <url-pattern>/browse/result/*</url-pattern>
   </servlet-mapping>
 
 </web-app>
