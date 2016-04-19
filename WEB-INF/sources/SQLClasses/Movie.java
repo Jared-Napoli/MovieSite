@@ -53,22 +53,25 @@ public class Movie {
 				firstFound = true;
 			}
 
-
 			if(l_name != "") {
 				if (firstFound) 
 					query = query.concat(" AND last_name like \"" + l_name + "%\"))");
 				else {
 					query = query.concat("select * from movies where id in (select movie_id from stars_in_movies where star_id in" 
 					+ " (select id from stars where last_name like \"" + l_name + "%\"))");
-				}
-			} else {
+					firstFound = true;
+				}	 
+			} else if (firstFound) {
 				query = query.concat("))");
 			}
 
-/*
 			if(m_title != "") {
-				query = query.concat("SELECT * from movies where title like \"" + m_title + "%\"");
-				firstFound = true;
+				if (firstFound)
+					query = query.concat(" and title like \"" + m_title + "%\"");
+				else {
+					query = query.concat("SELECT * from movies where title like \"" + m_title + "%\"");
+					firstFound = true;
+				}
 			}
 
 			if(m_year != 0) {
@@ -87,20 +90,9 @@ public class Movie {
 				firstFound = true;
 			}
 
-			firstFound = false;
-
-			if(f_name != "" ) {
-				star_query = star_query.concat("SELECT * from stars where first_name like \"" + f_name + "%\"");
-				firstFound = true;
+			if(!firstFound) {
+				query = query.concat("SELECT * from movies");
 			}
-
-			if(l_name != "" ) {
-				if(firstFound) 
-					star_query = star_query.concat(" AND last_name like \"" + l_name + "%\"");
-				else
-					star_query = star_query.concat("SELECT * from stars where last_name like \"" + l_name + "%\"");
-			}
-*/
 
 			// Perform the query
 			ResultSet rs = statement.executeQuery(query);
