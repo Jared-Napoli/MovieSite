@@ -41,9 +41,58 @@ public class Movie {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 
 			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
-			// Declare our statement
+			// D2eclare our statement
 			Statement statement = dbcon.createStatement();
-			String query = "SELECT * from movies where title like \"" + m_title + "%\"";
+			String query = "";
+			String star_query = "";
+			Boolean firstFound = false;
+
+			if(f_name != "") {
+				query = query.concat("SELECT * from movies where id in (select movie_id from stars_in_movies where star_id in"
+				+ " (select id from stars where first_name like \"" + f_name + "%\"");
+				firstFound = true;
+			}
+
+			if(l_name != "") {
+				if (firstFound) 
+					query = query.concat(" AND last_name like \"" + l_name + "%\"))");
+				else {
+					query = query.concat("select * from movies where id in (select movie_id from stars_in_movies where star_id in" 
+					+ " (select id from stars where last_name like \"" + l_name + "%\"))");
+					firstFound = true;
+				}	 
+			} else if (firstFound) {
+				query = query.concat("))");
+			}
+
+			if(m_title != "") {
+				if (firstFound)
+					query = query.concat(" and title like \"" + m_title + "%\"");
+				else {
+					query = query.concat("SELECT * from movies where title like \"" + m_title + "%\"");
+					firstFound = true;
+				}
+			}
+
+			if(m_year != 0) {
+				if (firstFound)
+					query = query.concat(" AND year=\"" + m_year + "\"");
+				else
+					query = query.concat("SELECT * from movies where year=\"" + m_year + "\"");
+				firstFound = true;
+			}
+
+			if(m_director != "") {
+				if (firstFound)
+					query = query.concat(" AND director like \"" + m_director + "%\"");
+				else
+					query = query.concat("SELECT * from movies where director like \"" + m_director + "%\"");
+				firstFound = true;
+			}
+
+			if(!firstFound) {
+				query = query.concat("SELECT * from movies");
+			}
 
 			// Perform the query
 			ResultSet rs = statement.executeQuery(query);
