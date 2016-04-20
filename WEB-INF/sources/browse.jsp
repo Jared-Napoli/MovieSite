@@ -24,20 +24,43 @@
 	// System.out.println("this email" + customer.email); 
 	%>
 	<H2 align="center">User Name from Session: <%=customer.email%></H2>
-
 	<H3>Search By Genre:</H3><br>
-	<table align="center" style"border: solid" border="1"/>
-<%
-		//Genre genre = new Genre();
-		List<Genre> genres = Genre.getFullGenreList();
-		for(Genre genre: genres) {
-%>
-		<tr>
-			<td style="border-right: solid;"><a href=/fabflix/browse/result/<%=genre.name%>><%=genre.name%></a></td>
-		</tr>
-<%
-	}	
-%>
+	<table style="display:inline; background-color: transparent">
+		<td>
+		<H3>Search by Genre:</H3>
+		<table style"border: solid" border="2">
+		<%
+			//Genre genre = new Genre();
+			List<Genre> genres = Genre.getFullGenreList();
+			for(Genre genre: genres) {
+		%>
+			<tr>
+				<td style="border: solid;"><a href=/fabflix/browse/genre/<%=genre.name%>><%=genre.name%></a></td>
+			</tr>
+		<%
+			}	
+		%>	
+		</table>
+		</td>
+		<td style="color: transparent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td valign="top" style="background-color: transparent;">
+		<H3>Search By Name:</H3>
+		<table align=center style="border: solid;" border="1">
+		<%
+			//Genre genre = new Genre();
+			List<String> letters = Movie.getFirstLetterList();
+			for(String letter: letters) {
+		%>
+			<tr>
+				<td style="border: solid;"><a href=/fabflix/browse/letter/<%=letter%>><%=letter%></a></td>
+			</tr>
+		<%
+			}	
+		%>	
+		</table>
+		</td>
+	</table>
 </BODY>
 </center>
+
 </HTML>

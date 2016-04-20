@@ -273,6 +273,37 @@ public class Movie {
 		}  // end catch SQLException
 		return movieList;
 	}
+
+	public static List<String> getFirstLetterList()
+	{
+		Movie movie = new Movie();
+		List<String> charList = new ArrayList<String>();
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Statement statement = dbcon.createStatement();
+			String query = "select distinct left(title,1) as letter from movies order by letter";
+
+			// Perform the query
+			ResultSet rs = statement.executeQuery(query);
+
+			// Iterate through each row of rs
+			while (rs.next()) {
+				charList.add(rs.getString("letter"));
+			}
+			rs.close();
+			statement.close();
+			dbcon.close();
+
+		} catch (Exception ex) {
+			while (ex != null) {
+				System.out.println ("SQL Exception 1:  " + ex.getMessage ());
+			}  // end while
+			return null;
+		}  // end catch SQLException
+		return charList;
+	}
 }
 
 

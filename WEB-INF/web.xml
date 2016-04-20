@@ -93,12 +93,21 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>BrowseResultServlet</servlet-name>
-    <jsp-file>/WEB-INF/sources/browse_result.jsp</jsp-file>
+    <servlet-name>BrowseGenreServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/genre_result.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>BrowseResultServlet</servlet-name>
-    <url-pattern>/browse/result/*</url-pattern>
+    <servlet-name>BrowseGenreServlet</servlet-name>
+    <url-pattern>/browse/genre/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/letter_result.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <url-pattern>/browse/letter/*</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -20,12 +20,12 @@
 	<H2 align="center">Browse Results:</H2><br>
 	<table align="center"style"border: solid" border="1"/>
 	<%
-		String genre_name = request.getPathInfo().substring(1);
-		String query = "select * from movies where id in(select movie_id from genres_in_movies where genre_id=(select id from genres where name='" + genre_name + "'));";
+		String first_letter = request.getPathInfo().substring(1);
+		String query = "select * from movies where title like '" + first_letter + "%'";
 		List<Movie> movies = Movie.getMovieList(query);
 		if(movies.size() == 0) {
 	%>
-		No movies found. 
+		No movies found.
 	<%	
 		} else {
 		for(Movie movie: movies) {
