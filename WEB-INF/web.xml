@@ -57,12 +57,21 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>SingleStarServlet</servlet-name>
+    <servlet-name>StarServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/single_star.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>SingleStarServlet</servlet-name>
-    <url-pattern>/single_star</url-pattern>
+    <servlet-name>StarServlet</servlet-name>
+    <url-pattern>/star/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SingleMovieServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/single_movie.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SingleMovieServlet</servlet-name>
+    <url-pattern>/movie/*</url-pattern>
   </servlet-mapping>
 
   <servlet>

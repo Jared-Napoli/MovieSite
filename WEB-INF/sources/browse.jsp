@@ -36,7 +36,7 @@
 			<td style="border-right: solid;"><a href=/fabflix/browse/result/<%=genre.name%>><%=genre.name%></a></td>
 		</tr>
 <%
-	}
+	}	
 %>
 </BODY>
 </center>
