@@ -36,7 +36,7 @@
   <TITLE>FabFlix</TITLE>
 </HEAD>
 <CENTER>
-<BODY BGCOLOR="#FDF5E6">
+<BODY>
 <H1 ALIGN="CENTER">Welcome to FabFlix Asshole!</H1>
 <%
     String url = "/fabflix/main";
@@ -54,7 +54,7 @@
 %>
 <FORM ACTION=<%=url%>
       METHOD="POST">
-  Username: <INPUT TYPE="TEXT" NAME="username"><BR>
+  Username: <INPUT TYPE="TEXT" NAME="username" autofocus="autofocus"><BR>
 
   Password: <INPUT TYPE="PASSWORD" NAME="password"><BR>
   <CENTER>

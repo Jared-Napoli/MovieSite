@@ -17,13 +17,7 @@
 <BODY BGCOLOR="cccccc">
 	<H1 align="center">Good Results Buddy WOO!</H1><br>
 	<%@include file="verify.jsp"%>
-	<% Customer customer = new Customer();
-	customer = (Customer)request.getSession().getAttribute("customer");
-	// System.out.println("this email" + customer.email); 
-	%>
-	<H2 align="center">User Name from Session: <%=customer.email%></H2>
-
-	<H3>List of Movies </H3><br>
+	<H2 align="center">List of Movies </H2><br>
 	<table align="center" style"border: solid" border="1"/>
 <%
 		Movie sampleMovie = new Movie(10, "string", 10, "string", "string", "string");

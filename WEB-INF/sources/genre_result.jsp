@@ -25,7 +25,7 @@
 		List<Movie> movies = Movie.getMovieList(query);
 		if(movies.size() == 0) {
 	%>
-		No movies found. 
+		No movies found.
 	<%	
 		} else {
 		for(Movie movie: movies) {

@@ -122,4 +122,214 @@ public class Movie {
 		}  // end catch SQLException
 		return movieList;
 	}
+
+	public static List<Movie> listOfMoviesGivenID(Integer id)
+	{
+		Movie movie = new Movie();
+		List<Movie> movieList = new ArrayList<Movie>();
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Statement statement = dbcon.createStatement();
+			String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id = '" + id + "')";
+
+			// Perform the query
+			ResultSet rs = statement.executeQuery(query);
+
+			// Iterate through each row of rs
+			while (rs.next()) {
+				movie = new Movie(
+				    rs.getInt("id"),
+				    rs.getString("title"),
+				    rs.getInt("year"),
+				    rs.getString("director"),
+				    rs.getString("banner_url"),
+				    rs.getString("trailer_url"));
+				movieList.add(movie);
+			}
+			rs.close();
+			statement.close();
+			dbcon.close();
+
+		} catch (Exception ex) {
+			while (ex != null) {
+				System.out.println ("SQL Exception 1:  " + ex.getMessage ());
+			}  // end while
+			return null;
+		}  // end catch SQLException
+		return movieList;
+	}
+
+	public static List<Movie> listOfMoviesGivenFirstAndLastName(String first_name, String last_name)
+	{
+		Movie movie = new Movie();
+		List<Movie> movieList = new ArrayList<Movie>();
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Statement statement = dbcon.createStatement();
+			String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id in (select id from stars where first_name= '" + first_name + "' and last_name= '" + last_name + "'))";
+
+			// Perform the query
+			ResultSet rs = statement.executeQuery(query);
+
+			// Iterate through each row of rs
+			while (rs.next()) {
+				movie = new Movie(
+				    rs.getInt("id"),
+				    rs.getString("title"),
+				    rs.getInt("year"),
+				    rs.getString("director"),
+				    rs.getString("banner_url"),
+				    rs.getString("trailer_url"));
+				movieList.add(movie);
+			}
+			rs.close();
+			statement.close();
+			dbcon.close();
+
+		} catch (Exception ex) {
+			while (ex != null) {
+				System.out.println ("SQL Exception 1:  " + ex.getMessage ());
+			}  // end while
+			return null;
+		}  // end catch SQLException
+		return movieList;
+	}
+
+	public static Movie getMovie(String id)
+	{
+		Movie movie = new Movie();
+		List<Movie> movieList = new ArrayList<Movie>();
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Statement statement = dbcon.createStatement();
+			String query = "select * from movies where id='" + id + "'";
+
+			// Perform the query
+			ResultSet rs = statement.executeQuery(query);
+
+			// Iterate through each row of rs
+			while (rs.next()) {
+				movie = new Movie(
+				    rs.getInt("id"),
+				    rs.getString("title"),
+				    rs.getInt("year"),
+				    rs.getString("director"),
+				    rs.getString("banner_url"),
+				    rs.getString("trailer_url"));
+			}
+			rs.close();
+			statement.close();
+			dbcon.close();
+
+		} catch (Exception ex) {
+			while (ex != null) {
+				System.out.println ("SQL Exception 1:  " + ex.getMessage ());
+			}  // end while
+			return null;
+		}  // end catch SQLException
+		return movie;
+	}
+
+	public static List<Movie> getMovieList(String query)
+	{
+		Movie movie = new Movie();
+		List<Movie> movieList = new ArrayList<Movie>();
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Statement statement = dbcon.createStatement();
+			//String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id in (select id from stars where first_name= '" + first_name + "' and last_name= '" + last_name + "'))";
+
+			// Perform the query
+			ResultSet rs = statement.executeQuery(query);
+
+			// Iterate through each row of rs
+			while (rs.next()) {
+				movie = new Movie(
+				    rs.getInt("id"),
+				    rs.getString("title"),
+				    rs.getInt("year"),
+				    rs.getString("director"),
+				    rs.getString("banner_url"),
+				    rs.getString("trailer_url"));
+				movieList.add(movie);
+			}
+			rs.close();
+			statement.close();
+			dbcon.close();
+
+		} catch (Exception ex) {
+			while (ex != null) {
+				System.out.println ("SQL Exception 1:  " + ex.getMessage ());
+			}  // end while
+			return null;
+		}  // end catch SQLException
+		return movieList;
+	}
+
+	public static List<String> getFirstLetterList()
+	{
+		Movie movie = new Movie();
+		List<String> charList = new ArrayList<String>();
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Statement statement = dbcon.createStatement();
+			String query = "select distinct left(title,1) as letter from movies order by letter";
+
+			// Perform the query
+			ResultSet rs = statement.executeQuery(query);
+
+			// Iterate through each row of rs
+			while (rs.next()) {
+				charList.add(rs.getString("letter"));
+			}
+			rs.close();
+			statement.close();
+			dbcon.close();
+
+		} catch (Exception ex) {
+			while (ex != null) {
+				System.out.println ("SQL Exception 1:  " + ex.getMessage ());
+			}  // end while
+			return null;
+		}  // end catch SQLException
+		return charList;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

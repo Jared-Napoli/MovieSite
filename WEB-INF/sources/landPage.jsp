@@ -12,8 +12,7 @@
 	<td>
 	<%@include file="verify.jsp"%>
 	<CENTER>
-	<BODY BGCOLOR="#FDF5E6">
-		<img src="http://ia.imdb.com/media/imdb/01/I/34/50/70m.jpg" alt="Missing Picture">
+	<BODY>
 		<H1 align="center">Welcome USER!</H1>
 	<FORM ACTION="/fabflix/search"
       METHOD="get">

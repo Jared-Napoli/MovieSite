@@ -57,6 +57,24 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>StarServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/single_star.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StarServlet</servlet-name>
+    <url-pattern>/star/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SingleMovieServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/single_movie.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SingleMovieServlet</servlet-name>
+    <url-pattern>/movie/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>BrowseServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/browse.jsp</jsp-file>
   </servlet>
@@ -75,12 +93,21 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>BrowseResultServlet</servlet-name>
-    <jsp-file>/WEB-INF/sources/browse_result.jsp</jsp-file>
+    <servlet-name>BrowseGenreServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/genre_result.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>BrowseResultServlet</servlet-name>
-    <url-pattern>/browse/result/*</url-pattern>
+    <servlet-name>BrowseGenreServlet</servlet-name>
+    <url-pattern>/browse/genre/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/letter_result.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <url-pattern>/browse/letter/*</url-pattern>
   </servlet-mapping>
 
 </web-app>
