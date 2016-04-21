@@ -31,6 +31,10 @@ public class Movie {
 		trailer_url = new_trailer_url;
 	}
 
+	public static void shitFunction()
+	{
+		System.out.println("Hey there fucker");
+	}
 
 
 	public static List<Movie> searchMovie(String m_title, Integer m_year, String m_director,
