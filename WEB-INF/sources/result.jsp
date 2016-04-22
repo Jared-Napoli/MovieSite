@@ -12,8 +12,13 @@
 <HTML>
 
 <%
-	String orderBy = (String)request.getParameter("orderBy");
-	String direction = (String)request.getParameter("direction");
+	String orderBy = request.getParameter("orderBy");
+	String direction = request.getParameter("direction");
+	String title = request.getParameter("title");
+	String director = request.getParameter("director");
+	String a_first_name = request.getParameter("a_first_name");
+	String a_last_name = request.getParameter("a_last_name");
+	String year = request.getParameter("year");
 	Integer numResults = Integer.parseInt(request.getParameter("numResults"));
 	Integer currResult = Integer.parseInt(request.getParameter("currResult"));
 %>
@@ -27,44 +32,44 @@
 	function sortByTitle() {
 		if ('<%=orderBy%>' === "title") {
 			if ('<%=direction%>' === "DESC") {
-				document.location.href="/fabflix/search/result?title=&year=&director=&a_first_name=&a_last_name=&orderBy=title&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=title&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
 			} else {
-				document.location.href="/fabflix/search/result?title=&year=&director=&a_first_name=&a_last_name=&orderBy=title&direction=DESC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=title&direction=DESC&numResults=" + '<%=numResults%>' + "&currResult=0";
 			}
 		} else {
-				document.location.href="/fabflix/search/result?title=&year=&director=&a_first_name=&a_last_name=&orderBy=title&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=title&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
 		}
 	}
 
 	function sortByYear() {
 		if ('<%=orderBy%>' === "year") {
 			if ('<%=direction%>' === "ASC") {
-				document.location.href="/fabflix/search/result?title=&year=&director=&a_first_name=&a_last_name=&orderBy=year&direction=DESC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=year&direction=DESC&numResults=" + '<%=numResults%>' + "&currResult=0";
 			} else {
-				document.location.href="/fabflix/search/result?title=&year=&director=&a_first_name=&a_last_name=&orderBy=year&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=year&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
 			}
 		} else {
-			document.location.href="/fabflix/search/result?title=&year=&director=&a_first_name=&a_last_name=&orderBy=year&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
+			document.location.href="/fabflix/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=year&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
 		}
 	}
 
 	function updateResults(arg) {
 		if(arg === "next") {
-			document.location.href="/fabflix/search/result?title=&year=&director=&a_first_name=&a_last_name=&orderBy=" + '<%=orderBy%>'+ "&direction=" + '<%=direction%>' + "&numResults=" + '<%=numResults%>' + "&currResult=" + '<%=numResults + currResult%>';
+			document.location.href="/fabflix/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=" + '<%=orderBy%>' + "&direction=" + '<%=direction%>' + "&numResults=" + '<%=numResults%>' + "&currResult=" + '<%=numResults + currResult%>';
 		} else {
-			document.location.href="/fabflix/search/result?title=&year=&director=&a_first_name=&a_last_name=&orderBy=" + '<%=orderBy%>'+ "&direction=" + '<%=direction%>' + "&numResults=" + '<%=numResults%>' + "&currResult=" + '<%=currResult - numResults%>';
+			document.location.href="/fabflix/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=" + '<%=orderBy%>' + "&direction=" + '<%=direction%>' + "&numResults=" + '<%=numResults%>' + "&currResult=" + '<%=currResult - numResults%>';
 		}
 	}
 
 	function changeNumResults() {
 		var selectBox = document.getElementById("selectBox");
     	var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    	document.location.href="/fabflix/search/result?title=&year=&director=&a_first_name=&a_last_name=&orderBy=" + '<%=orderBy%>'+ "&direction=" + '<%=direction%>' + "&numResults=" + selectedValue + "&currResult=" + '<%=currResult%>';
+    	document.location.href="/fabflix/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=" + '<%=orderBy%>'+ "&direction=" + '<%=direction%>' + "&numResults=" + selectedValue + "&currResult=" + '<%=currResult%>';
 	}
 </script>
 
 <BODY BGCOLOR="cccccc">
-	<H1 align="center">Good Results Buddy WOO!</H1><br>
+	<H1 align="center">Search Results</H1><br>
 	<%@include file="verify.jsp"%>
 	<H2 align="center">List of Movies </H2><br>
 	<center>
@@ -96,13 +101,10 @@
 		String m_director = request.getParameter("director");
 		String f_name = request.getParameter("a_first_name");
 		String l_name = request.getParameter("a_last_name");
-		int m_year = 0;
 		int results = 0;
 
-		if(request.getParameter("year") != "")
-			m_year = Integer.parseInt(request.getParameter("year"));
 
-		List<Movie> movies = sampleMovie.searchMovie(m_title, m_year, m_director, f_name, l_name, orderBy, direction);
+		List<Movie> movies = sampleMovie.searchMovie(m_title, year, m_director, f_name, l_name, orderBy, direction);
 		for(Movie movie: movies) {
 		results++;
 		if(results <= currResult) continue;
@@ -138,8 +140,19 @@
 			</td>
 		</tr>
 <%
-		if(results == currResult + numResults) break;
+	if(results == movies.size()) {
+		numResults = 0;
+		break;
+	} 
+
+
+	if(results == currResult + numResults) {
+		if(results == movies.size()) {
+		numResults = 0;
+		} 
+		break;
 	}
+}
 %>
 	</table>
 	<center>
