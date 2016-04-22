@@ -125,4 +125,22 @@
     <url-pattern>/reports/readme</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>Cart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/Cart/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/checkout.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <url-pattern>/Cart</url-pattern>
+  </servlet-mapping>
+
 </web-app>
