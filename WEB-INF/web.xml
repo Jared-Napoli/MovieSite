@@ -108,12 +108,21 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>BrowseLetterServlet</servlet-name>
+    <servlet-name>ReportLikeServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/report-like.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>BrowseLetterServlet</servlet-name>
+    <servlet-name>ReportLikeServlet</servlet-name>
     <url-pattern>/reports/like-predicate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ReadMeServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/readme.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadMeServlet</servlet-name>
+    <url-pattern>/reports/readme</url-pattern>
   </servlet-mapping>
 
 </web-app>
