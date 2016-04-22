@@ -18,6 +18,11 @@
 		Star's First Name: <INPUT TYPE="TEXT" NAME="a_first_name">
 		<br>
 		Star's Last Name: <INPUT TYPE="TEXT" NAME="a_last_name">
+		<INPUT TYPE="HIDDEN" NAME="orderBy" VALUE="title">
+		<INPUT TYPE="HIDDEN" NAME="direction" VALUE="ASC">
+		<INPUT TYPE="HIDDEN" NAME="numResults" VALUE="10">
+		<INPUT TYPE="HIDDEN" NAME="currResult" VALUE="0">
+		<INPUT TYPE="HIDDEN" NAME="totalResults" VALUE="0">
 		<CENTER>
 			<INPUT TYPE="SUBMIT" VALUE="Search">
 		</CENTER>

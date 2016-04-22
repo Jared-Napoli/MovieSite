@@ -40,6 +40,10 @@
 <H1 ALIGN="CENTER">Welcome to FabFlix Asshole!</H1>
 <%
     String url = "/fabflix/main";
+    String order = "title";
+    String direction = "ASC";
+    request.getSession().setAttribute("orderBy", (Object) order);
+    request.getSession().setAttribute("direction", (Object) direction);
     if(request.getSession().getAttribute("url") == null)
       {
         System.out.println("url = null");

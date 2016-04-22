@@ -37,9 +37,9 @@ public class Genre {
 
 			// Iterate through each row of rs
 			while (rs.next()) {
-				movie = new Movie(
+				genre = new Genre(
 				    rs.getInt("id"),
-				    rs.getString("name"),
+				    rs.getString("name"));
 				genreList.add(genre);
 			}
 			rs.close();
