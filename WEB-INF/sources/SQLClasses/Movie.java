@@ -37,7 +37,7 @@ public class Movie {
 	}
 
 
-	public static List<Movie> searchMovie(String m_title, Integer m_year, String m_director,
+	public static List<Movie> searchMovie(String m_title, String m_year, String m_director,
 	                                String f_name, String l_name, String order, String direction) {
 		Movie movie = new Movie();
 		List<Movie> movieList = new ArrayList<Movie>();
@@ -79,9 +79,9 @@ public class Movie {
 				}
 			}
 
-			if(m_year != 0) {
+			if(m_year != "") {
 				if (firstFound)
-					query = query.concat(" AND year=\"" + m_year + "\"");
+					query = query.concat(" AND year=\"" + Integer.parseInt(m_year) + "\"");
 				else
 					query = query.concat("SELECT * from movies where year=\"" + m_year + "\"");
 				firstFound = true;
@@ -97,10 +97,11 @@ public class Movie {
 
 			if(!firstFound) {
 				query = query.concat("SELECT * from movies");
-				query = query.concat(orderBy);
-				query = query.concat(direction);
 			}
 			
+			query = query.concat(orderBy);
+			query = query.concat(direction);
+
 			System.out.println(query);
 			// Iterate through each row of rs
 			movieList = getMovieList(query);

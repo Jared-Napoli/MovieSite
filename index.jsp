@@ -38,7 +38,7 @@
 </HEAD>
 <CENTER>
 <BODY>
-<H1 ALIGN="CENTER">Welcome to FabFlix Asshole!</H1>
+<H1 ALIGN="CENTER">Welcome to FabFlix!</H1>
 <%
     String url = "/fabflix/main";
     String order = "title";

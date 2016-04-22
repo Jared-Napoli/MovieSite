@@ -60,7 +60,6 @@
 <td>
 <CENTER>
 <BODY BGCOLOR="#FDF5E6">
-	<H1 align="center">Verified</H1>
 </CENTER>
 </TD>
 </BODY>
