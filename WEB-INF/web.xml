@@ -110,4 +110,13 @@
     <url-pattern>/browse/letter/*</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/report-like.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <url-pattern>/reports/like-predicate</url-pattern>
+  </servlet-mapping>
+
 </web-app>
