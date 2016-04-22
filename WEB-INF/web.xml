@@ -110,4 +110,13 @@
     <url-pattern>/browse/letter/*</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>Cart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/Cart/*</url-pattern>
+  </servlet-mapping>
+
 </web-app>
