@@ -27,6 +27,9 @@
 	%>
 	<H1 align="center"><%=star.first_name%> <%=star.last_name%><br></H1>
 	<CENTER>
+		<FORM align=right ACTION="/fabflix/Cart" METHOD="get">
+    		<INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+		</FORM>
 		<img src=<%=star.photo_url%> alt="Picture failed to load." align="middle" height="140" width="100">
 	<H3 align="center">Database ID: <%=star.id%><br>Date of Birth: <%=star.dob%><br><br></H3>
 	<table align="center" style"border: solid" border="1"/>

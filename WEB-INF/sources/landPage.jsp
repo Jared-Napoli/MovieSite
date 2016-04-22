@@ -30,6 +30,10 @@
       METHOD="get">
     <INPUT TYPE="SUBMIT" VALUE="Browse"></INPUT>
 </FORM>
+<FORM ACTION="/fabflix/Cart"
+      METHOD="get">
+    <INPUT ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+</FORM>
 </CENTER>
 </td>
 </BODY>

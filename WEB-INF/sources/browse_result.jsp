@@ -14,6 +14,10 @@
 	<link rel="stylesheet" type="text/css" href="../../mystyle.css">
 	<TITLE>Result Page</TITLE>
 </HEAD>
+<FORM class = "checkout" ACTION="/fabflix/Cart"
+      METHOD="get">
+    <INPUT ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout To Cart"></INPUT>
+</FORM>
 <BODY BGCOLOR="cccccc">
 	<H1 align="center">Good Browse Results Buddy WOO!</H1><br>
 	<%@include file="verify.jsp"%>

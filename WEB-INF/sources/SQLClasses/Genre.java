@@ -39,7 +39,7 @@ public class Genre {
 			while (rs.next()) {
 				genre = new Genre(
 				    rs.getInt("id"),
-				    rs.getString("name"),
+				    rs.getString("name"));
 				genreList.add(genre);
 			}
 			rs.close();
