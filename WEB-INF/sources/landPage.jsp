@@ -23,7 +23,6 @@
 	<CENTER>
 	<BODY>
 		<H1 align="center">Welcome USER!</H1>
-		<H2 align="center"><%=((ArrayList<Movie>)request.getSession().getAttribute("cart")).size()%></H2>
 	<FORM ACTION="/fabflix/search"
       METHOD="get">
     <INPUT TYPE="SUBMIT" VALUE="Search"></INPUT></FORM>OR<FORM ACTION="/fabflix/browse"
