@@ -12,6 +12,12 @@
 
 <HTML>
 	<HEAD>
+		<script type="text/javascript">
+        function callServlet(id) {
+        	var idd = id;
+            document.location.href="/fabflix/TestServlet/" + id + "";
+        }
+    	</script>
   		<link rel="stylesheet" type="text/css" href="../mystyle.css">
   		<TITLE>Single Movie Page</TITLE>
 	</HEAD>
@@ -24,12 +30,19 @@
 	movie = Movie.getMovie(id); 
 	String starring_query = "select * from stars where id in(select star_id from stars_in_movies where movie_id ='" + movie.id + "')";
 	List<Star> stars_in = Star.getStarList(starring_query);
+	String cart_url = "/fabflix/Cart/" + id;
 	%>
-	<H1 align=center><%=movie.title%><FORM align=right><INPUT style="height: 2em; width: 25em" TYPE="button" VALUE="Add to Cart" onClick=<%System.out.println("I clicked a fucking button");%>/></FORM></H1>
-	<button onClick="Movie.shitFunction()">BBBBBAAAAAALLLLLSSSSSS</button>
+	<H1 align=center><%=movie.title%>
+		<FORM action=<%=cart_url%> method="GET" align=right>
+			<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Add to Cart">
+		</FORM>
+	</H1>
+	<FORM align=right ACTION="/fabflix/Cart" METHOD="get">
+    <INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+	</FORM>
 	<CENTER>
 	<img src=<%=movie.banner_url%> alt="Picture failed to load." align="middle" height="140" width="100">
-	<H2 align="center">Released: <%=movie.year%><br>Directed By: <%=movie.director%><br><a href=<%=movie.trailer_url%>>Trailer Link</a><br></H2>
+	<H2 align="center">Price: $15.99<br>Released: <%=movie.year%><br>Directed By: <%=movie.director%><br><a href=<%=movie.trailer_url%>>Trailer Link</a><br></H2>
 	<H3 align="center">Starring: </H3>
 	<table align="center" style"border: solid" border="1"/>
 	<%
@@ -43,7 +56,7 @@
 	</tr>
 <%
 	}
-%>	
+%>
 </BODY>
 </CENTER>
 </HTML>

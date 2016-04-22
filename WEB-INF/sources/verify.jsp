@@ -2,7 +2,9 @@
  javax.sql.*,
  java.io.IOException,
  javax.servlet.http.*,
- javax.servlet.*"
+ javax.servlet.*,
+ java.util.*,
+ SQLClasses.*"
 %>
 
 <%@page import="SQLClasses.Customer"%>
@@ -13,6 +15,7 @@
 	//try
 	 //   {
 	    Customer myCustomer = new Customer();
+	    ArrayList<Movie> cart = new ArrayList<Movie>();
 	    String username;
 	    String password;
 	    if(request.getParameter("username") != null)
@@ -24,6 +27,7 @@
 	    	System.out.println(password);
 	    	myCustomer = myCustomer.getCustomerByCredentials(username, password);
 	    	request.getSession().setAttribute("customer", (Object)myCustomer);
+	    	request.getSession().setAttribute("cart", (Object) cart);
 	    }
 	    else
 	    {

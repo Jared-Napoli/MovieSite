@@ -73,6 +73,9 @@
 	<%@include file="verify.jsp"%>
 	<H2 align="center">List of Movies </H2><br>
 	<center>
+			<FORM ACTION="/fabflix/Cart" METHOD="get">
+    		<INPUT ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+			</FORM>
 		<% if(currResult > 0) { %>
 			<button onClick="updateResults('prev')">Prev</button>
 		<% } %>
