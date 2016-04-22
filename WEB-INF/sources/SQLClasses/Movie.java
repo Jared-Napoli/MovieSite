@@ -38,7 +38,7 @@ public class Movie {
 
 
 	public static List<Movie> searchMovie(String m_title, Integer m_year, String m_director,
-	                                String f_name, String l_name) {
+	                                String f_name, String l_name, String order, String direction) {
 		Movie movie = new Movie();
 		List<Movie> movieList = new ArrayList<Movie>();
 		try {
@@ -50,6 +50,7 @@ public class Movie {
 			String query = "";
 			String star_query = "";
 			Boolean firstFound = false;
+			String orderBy = " order by " + order + " ";
 
 			if(f_name != "") {
 				query = query.concat("SELECT * from movies where id in (select movie_id from stars_in_movies where star_id in"
@@ -96,27 +97,13 @@ public class Movie {
 
 			if(!firstFound) {
 				query = query.concat("SELECT * from movies");
+				query = query.concat(orderBy);
+				query = query.concat(direction);
 			}
-
-			// Perform the query
-			ResultSet rs = statement.executeQuery(query);
-			System.out.println("After query");
-
+			
+			System.out.println(query);
 			// Iterate through each row of rs
-			while (rs.next()) {
-				movie = new Movie(
-				    rs.getInt("id"),
-				    rs.getString("title"),
-				    rs.getInt("year"),
-				    rs.getString("director"),
-				    rs.getString("banner_url"),
-				    rs.getString("trailer_url"));
-				movieList.add(movie);
-			}
-			System.out.println("After initialization");
-			rs.close();
-			statement.close();
-			dbcon.close();
+			movieList = getMovieList(query);
 
 		} catch (Exception ex) {
 			while (ex != null) {
