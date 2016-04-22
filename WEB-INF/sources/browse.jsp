@@ -19,6 +19,9 @@
 <BODY BGCOLOR="cccccc">
 	<H1 align="center">Good Browse Buddy WOO!</H1><br>
 	<%@include file="verify.jsp"%>
+	<FORM ACTION="/fabflix/Cart" METHOD="get">
+    	<INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+	</FORM>
 	<% Customer customer = new Customer();
 	customer = (Customer)request.getSession().getAttribute("customer");
 	// System.out.println("this email" + customer.email); 

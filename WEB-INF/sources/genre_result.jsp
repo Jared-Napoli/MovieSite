@@ -18,6 +18,11 @@
 	<H1 align="center">Good Browse Results Buddy WOO!</H1><br>
 	<%@include file="verify.jsp"%>
 	<H2 align="center">Browse Results:</H2><br>
+	<center>
+	<FORM ACTION="/fabflix/Cart" METHOD="get">
+    	<INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+	</FORM>
+</center>
 	<table align="center"style"border: solid" border="1"/>
 	<%
 		String genre_name = request.getPathInfo().substring(1);
