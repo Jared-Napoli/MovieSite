@@ -32,19 +32,15 @@
 	List<Star> stars_in = Star.getStarList(starring_query);
 	String cart_url = "/fabflix/Cart/" + id;
 	%>
-<<<<<<< HEAD
 	<H1 align=center><%=movie.title%>
 		<FORM action=<%=cart_url%> method="GET" align=right>
 			<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Add to Cart">
 		</FORM>
 	</H1>
-=======
-	<H1 align=center><%=movie.title%><FORM align=right><INPUT style="height: 2em; width: 25em" TYPE="button" VALUE="Add to Cart" onClick=<%System.out.println("I clicked a fucking button");%>/></FORM></H1>
->>>>>>> f406fed9f4dbe0f428dee62381b641a3664b2901
-	<CENTER>
-		<FORM align=right ACTION="/fabflix/Cart" METHOD="get">
+	<FORM align=right ACTION="/fabflix/Cart" METHOD="get">
     <INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
-</FORM>
+	</FORM>
+	<CENTER>
 	<img src=<%=movie.banner_url%> alt="Picture failed to load." align="middle" height="140" width="100">
 	<H2 align="center">Price: $15.99<br>Released: <%=movie.year%><br>Directed By: <%=movie.director%><br><a href=<%=movie.trailer_url%>>Trailer Link</a><br></H2>
 	<H3 align="center">Starring: </H3>
