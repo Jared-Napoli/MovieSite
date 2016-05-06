@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Copyright 2004 The Apache Software Foundation
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+    <display-name>Log In</display-name>
+    <description>
+      Log In Screen
+    </description>
+
+    <security-constraint>
+      <web-resource-collection>
+      <web-resource-name>HTTPSOnly</web-resource-name>
+      <url-pattern>/*</url-pattern>
+      </web-resource-collection>
+      <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+      </user-data-constraint>
+    </security-constraint>
+
+
+<filter>
+    <filter-name>AuthenticationFilter</filter-name>
+    <filter-class>Filters.AuthenticationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthenticationFilter</filter-name>
+    <url-pattern>/customer/*</url-pattern>
+  </filter-mapping>
+
+<filter>
+    <filter-name>EmployeeFilter</filter-name>
+    <filter-class>Filters.EmployeeFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EmployeeFilter</filter-name>
+    <url-pattern>/employee/*</url-pattern>
+  </filter-mapping>
+
+  <!-- Define servlets that are included in the example application -->
+
+  <servlet>
+    <servlet-name>LogInServlet</servlet-name>
+    <servlet-class>Servlets.LogInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogInServlet</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FabFlixServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/landPage.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FabFlixServlet</servlet-name>
+    <url-pattern>/customer/main</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SearchServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/search.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/customer/search</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>StarServlet</servlet-name>
+    <servlet-class>Servlets.SingleStarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StarServlet</servlet-name>
+    <url-pattern>/customer/star/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SingleMovieServlet</servlet-name>
+    <servlet-class>Servlets.SingleMovieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SingleMovieServlet</servlet-name>
+    <url-pattern>/customer/movie/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseServlet</servlet-name>
+    <servlet-class>Servlets.BrowsePageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseServlet</servlet-name>
+    <url-pattern>/customer/browse</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ResultServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/result.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResultServlet</servlet-name>
+    <url-pattern>/customer/search/result/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseGenreServlet</servlet-name>
+    <servlet-class>Servlets.GenreResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseGenreServlet</servlet-name>
+    <url-pattern>/customer/browse/genre/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <servlet-class>Servlets.LetterResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <url-pattern>/customer/browse/letter/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ReportLikeServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/report-like.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportLikeServlet</servlet-name>
+    <url-pattern>/reports/like-predicate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ReadMeServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/readme.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadMeServlet</servlet-name>
+    <url-pattern>/reports/readme</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/cart.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <url-pattern>/customer/checkout</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CheckoutInfoServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/checkout_info.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckoutInfoServlet</servlet-name>
+    <url-pattern>/customer/checkout/info</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CheckoutProcessServlet</servlet-name>
+    <servlet-class>Servlets.CheckoutProcessServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckoutProcessServlet</servlet-name>
+    <url-pattern>/customer/checkout/process</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>Servlets.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/customer/cart/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DashboardServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/dashboard.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DashboardServlet</servlet-name>
+    <url-pattern>/_dashboard</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EmployeeMainServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/emp_main.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeMainServlet</servlet-name>
+    <url-pattern>/employee/main</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>InsertStarServlet</servlet-name>
+    <servlet-class>Servlets.InsertStarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertStarServlet</servlet-name>
+    <url-pattern>/employee/insert_star</url-pattern>
+  </servlet-mapping>
+
+</web-app>
