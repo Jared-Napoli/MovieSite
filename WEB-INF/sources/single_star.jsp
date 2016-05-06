@@ -29,6 +29,9 @@
 	%>
 	<H1 align=center><%=star.first_name%> <%=star.last_name%>
 	</H1>
+	<FORM action="/fabflix/customer/main" method=GET align=right>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM>
 	<FORM align=right ACTION="/fabflix/customer/checkout" METHOD="get">
     <INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>

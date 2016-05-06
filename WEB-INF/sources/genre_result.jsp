@@ -18,6 +18,9 @@
 	<H1 align="center">Good Browse Results Buddy WOO!</H1><br>
 	<H2 align="center">Browse Results:</H2><br>
 	<center>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM>
 	<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     	<INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>

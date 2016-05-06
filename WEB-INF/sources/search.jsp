@@ -26,7 +26,7 @@
 		<INPUT TYPE="SUBMIT" VALUE="Search"><br>
 	</FORM>
 			<br>
-			<FORM ACTION="/fabflix/customer/cart" METHOD="get">
+			<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     		<INPUT ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 			</FORM>
 		</CENTER>

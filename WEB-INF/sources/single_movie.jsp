@@ -30,6 +30,9 @@
 		String cart_url = "/fabflix/customer/cart/" + movie.id;
 	%>
 	<H1 align=center><%=movie.title%>
+	<FORM action="/fabflix/customer/main" method=GET align=right>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM>
 		<FORM action=<%=cart_url%> method="GET" align=right>
 			<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Add to Cart">
 		</FORM>

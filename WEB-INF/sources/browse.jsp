@@ -16,7 +16,10 @@
 <center>
 <BODY BGCOLOR="cccccc">
 	<H1 align="center">Good Browse Buddy WOO!</H1><br>
-	<FORM ACTION="/fabflix/Cart" METHOD="get">
+	<FORM action="/fabflix/customer/main" method=GET align=center>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM>
+	<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     	<INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>
 	<H3>Search By Genre:</H3><br>
@@ -51,6 +54,9 @@
 		</table>
 		</td>
 	</table>
+	<BR><BR><FORM action="/fabflix/customer/main" method=GET align=center>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM>
 </BODY>
 </center>
 
