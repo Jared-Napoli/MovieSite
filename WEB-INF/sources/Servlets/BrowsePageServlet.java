@@ -10,6 +10,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import SQLClasses.*;
 
+
 public class BrowsePageServlet extends HttpServlet {
   public String getServletInfo() {
     return "Browse Page Servlet";
