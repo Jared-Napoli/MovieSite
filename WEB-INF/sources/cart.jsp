@@ -29,11 +29,12 @@
 		<td>
 			<H3><a href=/fabflix/customer/movie/<%=movie.id%>><%=movie.title%></a></H3>
 		</td>
-		<td><%=cart.size()%></td>
 	</tr>
 <%
 	}
 %>	
+	<br>
+	<H3>Total: $<%=cart.size() * 15.99%></H3>
 	<FORM action="/fabflix/customer/checkout/info" method=GET align=center>
 		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Proceed to Checkout">
 	</FORM>

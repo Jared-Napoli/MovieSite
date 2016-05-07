@@ -23,9 +23,15 @@ public class CheckoutProcessServlet extends HttpServlet {
     String first_name = (String)request.getParameter("first_name");
     String last_name = (String)request.getParameter("last_name");
     String cc_number = (String)request.getParameter("cc_number");
+    Customer customer = (Customer)request.getSession().getAttribute("customer");
+    List<Movie> cart = (List<Movie>)request.getSession().getAttribute("cart");
     CreditCard cc = CreditCard.getCreditCardByCredentials(first_name,last_name,cc_number);
     if(cc != null)
-      request.getRequestDispatcher("/WEB-INF/sources/checkout_success.jsp").forward(request, response);
+    {
+        Sale.insertSale(customer, cart);
+        request.getSession().setAttribute("cart", (Object) new ArrayList<Movie> ());
+        request.getRequestDispatcher("/WEB-INF/sources/checkout_success.jsp").forward(request, response);
+    }
     else
       request.getRequestDispatcher("/WEB-INF/sources/checkout_failure.jsp").forward(request, response);
   }

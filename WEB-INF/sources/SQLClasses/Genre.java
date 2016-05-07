@@ -47,9 +47,7 @@ public class Genre {
 			dbcon.close();
 
 		} catch (Exception ex) {
-			while (ex != null) {
 				System.out.println ("SQL Exception 1:  " + ex.getMessage ());
-			}  // end while
 			return null;
 		}  // end catch SQLException
 		return genreList;
@@ -83,9 +81,7 @@ public class Genre {
 			dbcon.close();
 
 		} catch (Exception ex) {
-			while (ex != null) {
 				System.out.println ("SQL Exception 1:  " + ex.getMessage ());
-			}  // end while
 			return null;
 		}  // end catch SQLException
 		return genreList;

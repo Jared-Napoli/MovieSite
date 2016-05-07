@@ -58,10 +58,7 @@ public class Star
 	    }
 	    catch(Exception ex)
 		{
-			while (ex != null)
-			{
 				System.out.println ("SQL Exception:  " + ex.getMessage ());
-			}
 		}
 	}
 
@@ -96,10 +93,8 @@ public class Star
 		}
 		catch (Exception ex)
 		{
-			while (ex != null)
-			{
 				System.out.println ("SQL Exception:  " + ex.getMessage ());
-			}
+
 			return null;
 		}
 		return null;
@@ -133,9 +128,7 @@ public class Star
 			dbcon.close();
 
 		} catch (Exception ex) {
-			while (ex != null) {
 				System.out.println ("SQL Exception 1:  " + ex.getMessage ());
-			}  // end while
 			return null;
 		}  // end catch SQLException
 		return starList;

@@ -42,7 +42,7 @@
 <%
     String url = "/fabflix/customer/main";
     if(request.getSession().getAttribute("url")!= null)
-      url = (String)request.getSession().getAttribute("url");
+        url = (String)request.getSession().getAttribute("url");
 %>
 
 

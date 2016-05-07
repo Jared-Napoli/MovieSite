@@ -60,9 +60,7 @@ public class CreditCard {
 			dbcon.close();
 
 		} catch (Exception ex) {
-			while (ex != null) {
 				System.out.println ("SQL Exception:  " + ex.getMessage ());
-			}  // end while
 			return null;
 		}  // end catch SQLException
 		return null;
