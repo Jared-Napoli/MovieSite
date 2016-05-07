@@ -7,6 +7,9 @@
 </HEAD>
 <BODY BGCOLOR="#FDF5E6">
 	<H1 align="center">Good Checkout Pal!</H1>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM>
 	<FORM ACTION="/fabflix/customer/checkout/process" METHOD="post">
 		First Name: <INPUT TYPE="TEXT" NAME="first_name">
 		<br>

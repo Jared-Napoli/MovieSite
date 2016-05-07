@@ -35,6 +35,7 @@
 <HEAD>
   <link rel="stylesheet" type="text/css" href="mystyle.css">
   <TITLE>FabFlix</TITLE>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </HEAD>
 <CENTER>
 <BODY>
@@ -54,6 +55,7 @@
   <CENTER>
     <INPUT TYPE="SUBMIT" VALUE="Submit Order">
   </CENTER>
+  <BR><BR><div class="g-recaptcha" data-sitekey="6LeHnx4TAAAAAOaTFUEthWLEml-3BxUYMPWMZOUC"></div>
 </FORM>
 </CENTER>
 </BODY>

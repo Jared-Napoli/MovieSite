@@ -28,10 +28,6 @@
       METHOD="get">
     <INPUT ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 </FORM>
-<FORM ACTION="www.google.com"
-      METHOD="get">
-    <INPUT ID = "google" TYPE="SUBMIT" VALUE="Go to Google"></INPUT>
-</FORM>
 </CENTER>
 </td>
 </BODY>

@@ -35,10 +35,13 @@
 %>	
 	<br>
 	<H3>Total: $<%=cart.size() * 15.99%></H3>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM><BR><BR>
 	<FORM action="/fabflix/customer/checkout/info" method=GET align=center>
 		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Proceed to Checkout">
-	</FORM>
-	<button onclick="goBack()">Return to Previous Page</button>
+	</FORM><BR><BR>
+	<button onclick="goBack()">Return to Previous Page</button><BR><BR>
 
 <script>
 function goBack() {

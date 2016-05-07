@@ -29,6 +29,7 @@
 	<TITLE>Result Page</TITLE>
 </HEAD>
 
+
 <script>
 	function sortByTitle() {
 		if ('<%=orderBy%>' === "title") {
@@ -72,8 +73,11 @@
 <BODY BGCOLOR="cccccc">
 	<H1 align="center">Search Results</H1><br>
 	<H2 align="center">List of Movies </H2><br>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM>
 	<center>
-			<FORM ACTION="/fabflix/customer/cart" METHOD="get">
+			<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     		<INPUT ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 			</FORM>
 		<% if(currResult > 0) { %>
@@ -170,6 +174,9 @@
 		  	<option value="100">100</option>
 		</select> 
 	<button onClick="updateResults('next')">Next</button>
+	<BR><BR><FORM action="/fabflix/customer/main" method=GET align=center>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM>
 	</center>
 </BODY>
 </HTML>

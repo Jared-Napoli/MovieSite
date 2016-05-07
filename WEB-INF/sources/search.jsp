@@ -7,6 +7,9 @@
 </HEAD>
 <BODY BGCOLOR="#FDF5E6">
 	<H1 align="center">Good Search Buddy WOOO!</H1>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
+		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+	</FORM>
 	<FORM ACTION="/fabflix/customer/search/result" METHOD="get">
 		Title: <INPUT TYPE="TEXT" NAME="title">
 		<br>
@@ -26,7 +29,7 @@
 		<INPUT TYPE="SUBMIT" VALUE="Search"><br>
 	</FORM>
 			<br>
-			<FORM ACTION="/fabflix/customer/cart" METHOD="get">
+			<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     		<INPUT ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 			</FORM>
 		</CENTER>
