@@ -70,18 +70,22 @@
 	}
 </script>
 
-<BODY BGCOLOR="cccccc">
-	<H1 align="center">Search Results</H1><br>
-	<H2 align="center">List of Movies </H2><br>
+<BODY bgcolor = "cccccc">
+	<div style="color:black; padding:8px; font-family: Verdana; font-weight: bold; font-size: 22px;">
+		<H1 align="center">Search Results</H1>
+	</div>
+	<div style="color:black; padding:8px; font-family: Verdana; font-weight: bold; font-size: 18px;">
+		<H2 align="center">List of Movies </H2>
+	</div>
 	<FORM action="/fabflix/customer/main" method=GET align=center>
-		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 	<center>
 			<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
-    		<INPUT ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+    		<INPUT ID = "checkOut" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 			</FORM>
 		<% if(currResult > 0) { %>
-			<button onClick="updateResults('prev')">Prev</button>
+			<button onClick="updateResults('prev')" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080">Prev</button>
 		<% } %>
 		<select id="selectBox" onChange="changeNumResults()">
 			<option selected disabled><%=numResults%></option>
@@ -90,14 +94,14 @@
 	  		<option value="50">50</option>
 		  	<option value="100">100</option>
 		</select> 
-		<button onClick="updateResults('next')">Next</button>
+		<button onClick="updateResults('next')" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080">Next</button>
 	</center>
 	<table align="center" style"border: solid" border="1"/>
 	<tr>
 			<th>Movie ID</th>
 			<th></th>
-			<th><button onClick="sortByTitle()"/>Title</th>
-			<th><button onClick="sortByYear()"/>Year</th>
+			<th><button onClick="sortByTitle()" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080"/>Title</th>
+			<th><button onClick="sortByYear()" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080"/>Year</th>
 			<th>Director</th>
 			<th>Actors</th>
 			<th>Genres</th>
@@ -164,7 +168,7 @@
 	</table>
 	<center>
 		<% if(currResult > 0) { %>
-			<button onClick="updateResults('prev')">Prev</button>
+			<button onClick="updateResults('prev')" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080">Prev</button>
 		<% } %>	
 		<select id="selectBox" onChange="changeNumResults()">
 			<option selected disabled><%=numResults%></option>
@@ -173,9 +177,9 @@
 	  		<option value="50">50</option>
 		  	<option value="100">100</option>
 		</select> 
-	<button onClick="updateResults('next')">Next</button>
+	<button onClick="updateResults('next')" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080">Next</button>
 	<BR><BR><FORM action="/fabflix/customer/main" method=GET align=center>
-		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 	</center>
 </BODY>

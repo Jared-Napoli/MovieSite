@@ -2,10 +2,10 @@
 
 <HTML>
 <HEAD>
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../mystyle.css">
  	<TITLE>Checkout Info Page</TITLE>
 </HEAD>
-<BODY BGCOLOR="#FDF5E6">
+<BODY BGCOLOR="#cccccc">
 	<H1 align="center">Good Checkout Pal!</H1>
 	<FORM action="/fabflix/customer/main" method=GET align=center>
 		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">

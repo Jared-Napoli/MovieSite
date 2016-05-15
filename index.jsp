@@ -39,24 +39,24 @@
 </HEAD>
 <CENTER>
 <BODY>
+  <div style="color:black; padding:8px; font-family: Verdana; font-weight: bold; font-size: 22px;">
 <H1 ALIGN="CENTER">Welcome to FabFlix!</H1>
+</div>
 <%
     String url = "/fabflix/customer/main";
     if(request.getSession().getAttribute("url")!= null)
         url = (String)request.getSession().getAttribute("url");
 %>
-
-
-<FORM ACTION=<%=url%>
-      METHOD="POST">
-  Username: <INPUT TYPE="TEXT" NAME="username" autofocus="autofocus"><BR>
-
-  Password: <INPUT TYPE="PASSWORD" NAME="password"><BR>
+<div style="font-family: Verdana; font-weight: bold; font-size: 14px; padding:10px;">
+  <FORM ACTION=<%=url%> METHOD="POST">
+    Username: <INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="username" autofocus="autofocus"><BR>
+    Password: <INPUT TYPE="PASSWORD" style="font-family: Verdana; font-size: 14px;" NAME="password"><BR><BR>
   <CENTER>
-    <INPUT TYPE="SUBMIT" VALUE="Submit Order">
+    <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Submit Order">
   </CENTER>
-  <BR><BR><div class="g-recaptcha" data-sitekey="6LeHnx4TAAAAAOaTFUEthWLEml-3BxUYMPWMZOUC"></div>
+  <BR><div class="g-recaptcha" data-sitekey="6LeHnx4TAAAAAOaTFUEthWLEml-3BxUYMPWMZOUC"></div>
 </FORM>
+</div>
 </CENTER>
 </BODY>
 </HTML>

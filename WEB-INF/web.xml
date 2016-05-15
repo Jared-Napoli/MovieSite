@@ -244,4 +244,14 @@
     <url-pattern>/employee/add_movie</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>BackgroundSearchServlet</servlet-name>
+    <servlet-class>backgroundSearch</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>BackgroundSearchServlet</servlet-name>
+    <url-pattern>/landpage/backgroundSearch/*</url-pattern>
+  </servlet-mapping>
+
 </web-app>
