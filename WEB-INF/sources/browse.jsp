@@ -10,19 +10,21 @@
 
 <HTML>
 <HEAD>
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../mystyle.css">
   	<TITLE>Browse Page</TITLE>
 </HEAD>
 <center>
-<BODY BGCOLOR="cccccc">
-	<H1 align="center">Good Browse Buddy WOO!</H1><br>
+<BODY>
+	 <div style="color:black; font-family: Verdana; font-size: 22px; padding:20px;">
+	<H1 align="center">Browse Fabflix</H1>
+	</div>
 	<FORM action="/fabflix/customer/main" method=GET align=center>
-		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 	<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
-    	<INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+    	<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>
-	<H3>Search By Genre:</H3><br>
+	<div style="font-family: Verdana; font-weight: bold; font-size: 14px; padding:10px;">
 	<table style="display:inline; background-color: transparent">
 		<td>
 		<H3>Search by Genre:</H3>
@@ -36,8 +38,9 @@
 		<%
 			}	
 		%>	
-		</table>
 		</td>
+		</table>
+		</div>
 		<td style="color: transparent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 		<td valign="top" style="background-color: transparent;">
 		<H3>Search By Name:</H3>
@@ -55,7 +58,7 @@
 		</td>
 	</table>
 	<BR><BR><FORM action="/fabflix/customer/main" method=GET align=center>
-		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 </BODY>
 </center>

@@ -15,27 +15,28 @@
 </HEAD>
 <CENTER>
 <BODY>
+  <div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
 <H1 ALIGN="CENTER">Welcome Loyal Employee!</H1>
+</div>
 <%@include file="error.jsp" %>
 <%
     //String url = "/fabflix/employee/main";
     //if(request.getSession().getAttribute("url")!= null)
     //  url = (String)request.getSession().getAttribute("url");
-    System.out.println("the fuck?");
     boolean error = false;
     request.getSession().setAttribute("error", (Object) error);
 %>
 
-
+<div style="font-family: Verdana; font-weight: bold; font-size: 14px; padding:10px;">
 <FORM ACTION="/fabflix/employee/main"
       METHOD="POST">
   Email: <INPUT TYPE="TEXT" NAME="email" autofocus="autofocus"><BR>
-
-  Password: <INPUT TYPE="PASSWORD" NAME="password"><BR>
+  Password: <INPUT TYPE="PASSWORD" NAME="password"><BR><BR>
   <CENTER>
-    <INPUT TYPE="SUBMIT" VALUE="Submit Order">
+    <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Submit Order">
   </CENTER>
 </FORM>
+</div>
 </CENTER>
 </BODY>
 </HTML>

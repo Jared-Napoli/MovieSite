@@ -13,16 +13,18 @@
 <HTML>
 	<HEAD>
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
-		<TITLE>Checkout Succeeded</TITLE>
+		<TITLE>Checkout Failed</TITLE>
 	</HEAD>
-<BODY>
+<BODY bgcolor = "cccccc">
 	<CENTER>
-		<H1>Checkout Failed, You Suck.</H1>
+		<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
+		<H1>Oops, Failed to Checkout!</H1>
+	</div>
 	<FORM action="/fabflix/customer/checkout/info" method=GET align=center>
-		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Retry">
+		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Retry">
 	</FORM>
 	<FORM action="/fabflix/customer/main" method=GET align=center>
-		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 </BODY>
 </CENTER>

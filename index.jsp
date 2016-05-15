@@ -39,7 +39,7 @@
 </HEAD>
 <CENTER>
 <BODY>
-  <div style="color:black; padding:8px; font-family: Verdana; font-weight: bold; font-size: 22px;">
+   <div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
 <H1 ALIGN="CENTER">Welcome to FabFlix!</H1>
 </div>
 <%

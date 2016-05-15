@@ -15,11 +15,11 @@
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
 		<TITLE>Checkout Succeeded</TITLE>
 	</HEAD>
-<BODY>
+<BODY bgcolor = "cccccc">
 	<CENTER>
-		<H1>Success, Bitch!</H1>
+		<H1>Successfully Checked Out!</H1>
 	<FORM action="/fabflix/customer/main" method=GET align=center>
-		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 </BODY>
 </CENTER>
