@@ -23,12 +23,11 @@
 	<BODY>
     <div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
 		  <H1 align="center">Welcome USER!</H1>
-  <div>
+  </div>
 	<FORM ACTION="/fabflix/customer/search"
       METHOD="get">
     <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Search"></INPUT>
   </FORM>
-
     <FORM ACTION="/fabflix/customer/browse" METHOD="get">
     <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Browse"></INPUT>
 </FORM>
@@ -36,10 +35,12 @@
       METHOD="get">
     <INPUT ID = "checkOut" TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Checkout"></INPUT>
 </FORM>
-</div>
-    <form name='myForm'>
+
+    <form ACTION="/fabflix/customer/search" METHOD="get" name='myForm'>
         <input id="autocomplete" type='text' onkeyup="autocompleteSearch();" name='search' placeholder="Search.." style="width: 280px;">
+        <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Quick Search">
     </form>
+    
 </CENTER>
 </td>
 </BODY>
