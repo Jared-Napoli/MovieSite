@@ -76,11 +76,20 @@ function autocompleteSearch()
       var str = ajaxRequest.responseText;
       var result = str.split("$%");
 
-      $( "#autocomplete" ).autocomplete({
-      source: result
-    });
+      $("#autocomplete").autocomplete({
+        minLength: 0,
+      source: function (request, response) {
+              response(result);
+          }
+      });
+    
+    // $('#autocomplete').autocomplete({
+    //   source: ['black', 'white', 'red black']
+    //   });
+
     }
   }
+
   ajaxRequest.open("GET", "/fabflix/landpage/backgroundSearch/" + document.myForm.search.value, true);
   ajaxRequest.send(null);
 }
