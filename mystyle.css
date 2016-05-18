@@ -1,11 +1,21 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	color:#696969;
+	background-color:#696969;
 	background-image:url(images/mainbg.jpg);
 	background-repeat:no-repeat;
+	background-attachment: fixed;
 	background-size:100%;
+}
+a:link {
+	text-decoration: none;
+	font-weight: bold;
 }
 
 table {
-	background-color: white;
+	background-color: rgba(255,255,255,0.5);
 }
+
+input[type=submit] {
+    width: 20em;  height: 2em;
+}
+

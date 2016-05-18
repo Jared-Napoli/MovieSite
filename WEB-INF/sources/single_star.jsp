@@ -12,19 +12,40 @@
 
 <HTML>
 	<HEAD>
-  		<link rel="stylesheet" type="text/css" href="mystyle.css">
+  		<link rel="stylesheet" type="text/css" href="../mystyle.css">
   		<TITLE>Single Star Page</TITLE>
 	</HEAD>
 
 	<BODY BGCOLOR="CCCCCC">
 	<%@include file="verify.jsp"%>
-	<H1 align="center">Good Results Buddy WOO!</H1><br>
-	<% SingleStar star = new SingleStar();
-	Integer id = 907007;
-	star = SingleStar.getSingleStarAttributes(id);
-	// System.out.println("this email" + customer.email); 
+	<%
+	Star star = new Star();
+	String id =request.getPathInfo().substring(1);
+	star = Star.getStar(id); 
+	String movies_starred_in_query = "select * from movies where id in (select movie_id from stars_in_movies where star_id='" + id + "')";
+	List<Movie> movies = Movie.getMovieList(movies_starred_in_query);
 	%>
-	<H2 align="center">User Name from Session: <%=star.first_name%></H2>
+	<H1 align="center"><%=star.first_name%> <%=star.last_name%><br></H1>
+	<CENTER>
+		<FORM align=right ACTION="/fabflix/Cart" METHOD="get">
+    		<INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+		</FORM>
+		<img src=<%=star.photo_url%> alt="Picture failed to load." align="middle" height="140" width="100">
+	<H3 align="center">Database ID: <%=star.id%><br>Date of Birth: <%=star.dob%><br><br></H3>
+	<table align="center" style"border: solid" border="1"/>
+	<%
+		for(Movie movie: movies) {
+%>
+		<tr>
+		<td><img src=<%=movie.banner_url%> alt="Picture failed to load." height="140" width="100"></td>
+		<td>
+			<H3><a href=/fabflix/movie/<%=movie.id%>><%=movie.title%></a></H3>
+		</td>
+	</tr>
+<%
+	}
+%>
+	
 </BODY>
-
+</CENTER>
 </HTML>

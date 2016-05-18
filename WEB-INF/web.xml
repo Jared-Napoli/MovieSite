@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
   Copyright 2004 The Apache Software Foundation
-
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-
       http://www.apache.org/licenses/LICENSE-2.0
-
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -57,8 +54,26 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>BrowseServlet</servlet-name>
+    <servlet-name>StarServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/single_star.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StarServlet</servlet-name>
+    <url-pattern>/star/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SingleMovieServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/single_movie.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SingleMovieServlet</servlet-name>
+    <url-pattern>/movie/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/browse.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>BrowseServlet</servlet-name>
@@ -72,6 +87,60 @@
   <servlet-mapping>
     <servlet-name>ResultServlet</servlet-name>
     <url-pattern>/search/result</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseGenreServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/genre_result.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseGenreServlet</servlet-name>
+    <url-pattern>/browse/genre/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/letter_result.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowseLetterServlet</servlet-name>
+    <url-pattern>/browse/letter/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ReportLikeServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/report-like.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportLikeServlet</servlet-name>
+    <url-pattern>/reports/like-predicate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ReadMeServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/readme.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadMeServlet</servlet-name>
+    <url-pattern>/reports/readme</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>Cart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/Cart/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/checkout.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <url-pattern>/Cart</url-pattern>
   </servlet-mapping>
 
 </web-app>

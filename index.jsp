@@ -3,6 +3,7 @@
  java.io.IOException,
  javax.servlet.http.*,
  javax.servlet.*,
+ java.util.*,
  SQLClasses.*"
 %>
 
@@ -36,10 +37,14 @@
   <TITLE>FabFlix</TITLE>
 </HEAD>
 <CENTER>
-<BODY BGCOLOR="#FDF5E6">
-<H1 ALIGN="CENTER">Welcome to FabFlix Asshole!</H1>
+<BODY>
+<H1 ALIGN="CENTER">Welcome to FabFlix!</H1>
 <%
     String url = "/fabflix/main";
+    String order = "title";
+    String direction = "ASC";
+    request.getSession().setAttribute("orderBy", (Object) order);
+    request.getSession().setAttribute("direction", (Object) direction);
     if(request.getSession().getAttribute("url") == null)
       {
         System.out.println("url = null");
@@ -49,11 +54,12 @@
       {
         System.out.println("url != null");
         url = (String)request.getSession().getAttribute("url");
+        request.getSession().setAttribute("url", (Object) null);
       }
 %>
 <FORM ACTION=<%=url%>
       METHOD="POST">
-  Username: <INPUT TYPE="TEXT" NAME="username"><BR>
+  Username: <INPUT TYPE="TEXT" NAME="username" autofocus="autofocus"><BR>
 
   Password: <INPUT TYPE="PASSWORD" NAME="password"><BR>
   <CENTER>
