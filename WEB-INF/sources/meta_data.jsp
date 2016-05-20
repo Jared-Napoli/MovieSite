@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
 		<TITLE>Meta Data</TITLE>
 	</HEAD>
+	<div align="right"><%@include file="quickSearch.jsp"%></div>
 <BODY>
 	<div style="font-family: Verdana; font-weight: bold; font-size: 14px; padding:10px;">
 	<CENTER>

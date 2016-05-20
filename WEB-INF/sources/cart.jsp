@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
 		<TITLE>Cart</TITLE>
 	</HEAD>
+	<div align="right"><%@include file="quickSearch.jsp"%></div>
 <BODY>
 	<CENTER>
 		<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">

@@ -6,6 +6,8 @@
  	<TITLE>Search Page</TITLE>
 
 </HEAD>
+<div align="right"><%@include file="quickSearch.jsp"%></div>
+
 <BODY>
 	<div style="color:black; padding:8px; font-family: Verdana; font-weight: bold; font-size: 22px;">
 		<H1 align="center">Search Fabflix</H1>

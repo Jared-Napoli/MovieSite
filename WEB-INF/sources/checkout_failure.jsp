@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
 		<TITLE>Checkout Failed</TITLE>
 	</HEAD>
+	<div align="right"><%@include file="quickSearch.jsp"%></div>
 <BODY bgcolor = "cccccc">
 	<CENTER>
 		<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">

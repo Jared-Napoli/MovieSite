@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
  	<TITLE>Checkout Info Page</TITLE>
 </HEAD>
+<div align="right"><%@include file="quickSearch.jsp"%></div>
 <CENTER>
 <BODY BGCOLOR="#cccccc">
 	<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">

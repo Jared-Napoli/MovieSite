@@ -21,6 +21,7 @@
   		<link rel="stylesheet" type="text/css" href="../mystyle.css">
   		<TITLE>Single Movie Page</TITLE>
 	</HEAD>
+	<div align="right"><%@include file="quickSearch.jsp"%></div>
 	<CENTER>
 	<BODY BGCOLOR="CCCCCC">
 	<%

@@ -12,8 +12,9 @@
 <HTML>
 <HEAD>
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
-	<TITLE>Result Page</TITLE>
+	<TITLE>Genre Result Page</TITLE>
 </HEAD>
+<div align="right"><%@include file="quickSearch.jsp"%></div>
 <BODY BGCOLOR="cccccc">
 	<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
 	<H1 align="center">Browse Results</H1>

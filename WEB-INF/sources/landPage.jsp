@@ -19,6 +19,7 @@
 
   		<TITLE>Home Page</TITLE>
 	</HEAD>
+  <div align="right"><%@include file="quickSearch.jsp"%></div>
 	<td>
 	<CENTER>
 	<BODY>
@@ -30,73 +31,14 @@
     <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Search"></INPUT>
   </FORM>
     <FORM ACTION="/fabflix/customer/browse" METHOD="get">
-    <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Browse"></INPUT>
+    <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Browse">
+    </INPUT>
 </FORM>
 <FORM ACTION="/fabflix/customer/checkout"
       METHOD="get">
     <INPUT ID = "checkOut" TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Checkout"></INPUT>
 </FORM>
-
-    <form ACTION="/fabflix/customer/search/result" METHOD="get" name='myForm'>
-        <input id="autocomplete" type='text' onkeyup="autocompleteSearch();" name='title' placeholder="Search.." style="width: 280px;">
-        <INPUT TYPE="HIDDEN" NAME="orderBy" VALUE="title">
-        <INPUT TYPE="HIDDEN" NAME="direction" VALUE="ASC">
-        <INPUT TYPE="HIDDEN" NAME="numResults" VALUE="10">
-        <INPUT TYPE="HIDDEN" NAME="currResult" VALUE="0">
-        <INPUT TYPE="HIDDEN" NAME="totalResults" VALUE="0">
-        <INPUT TYPE="HIDDEN" NAME="year" VALUE="">
-        <INPUT TYPE="HIDDEN" NAME="director" VALUE="">
-        <INPUT TYPE="HIDDEN" NAME="a_first_name" VALUE="">
-        <INPUT TYPE="HIDDEN" NAME="a_last_name" VALUE="">
-        <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Quick Search">
-    </form>
-    
 </CENTER>
 </td>
 </BODY>
-
-<script language="javascript" type="text/javascript">
-<!--
-//Browser Support Code
-function autocompleteSearch()
-{
-  var ajaxRequest;  // The variable that makes Ajax possible!
-  try{
-    // Opera 8.0+, Firefox, Safari
-    ajaxRequest = new XMLHttpRequest();
-  } catch (e){
-    // Internet Explorer Browsers
-    try{
-      ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-    } catch (e) {
-      try{
-        ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-      } catch (e){
-        // Something went wrong
-        alert("Your browser broke!");
-        return false;
-      }
-    }
-  }
-  // Create a function that will receive data sent from the server
-  ajaxRequest.onreadystatechange = function()
-  {
-    if(ajaxRequest.readyState == 4)
-    {
-      var str = ajaxRequest.responseText;
-      var result = str.split("$%");
-
-      $("#autocomplete").autocomplete({
-        minLength: 0,
-      source: function (request, response) {
-              response(result);
-          }
-      });
-    }
-  }
-
-  ajaxRequest.open("GET", "/fabflix/customer/BackgroundSearch/" + document.myForm.title.value, true);
-  ajaxRequest.send(null);
-}
-</script>
 </HTML>

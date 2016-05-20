@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
   	<TITLE>Browse Page</TITLE>
 </HEAD>
+<div align="right"><%@include file="quickSearch.jsp"%></div>
 <center>
 <BODY>
 	 <div style="color:black; font-family: Verdana; font-size: 22px; padding:20px;">

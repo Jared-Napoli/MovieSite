@@ -12,17 +12,19 @@
 <HTML>
 <HEAD>
 	<link rel="stylesheet" type="text/css" href="../../mystyle.css">
-	<TITLE>Result Page</TITLE>
+	<TITLE>Letter Page</TITLE>
 </HEAD>
+<div align="right"><%@include file="quickSearch.jsp"%></div>
 <BODY BGCOLOR="cccccc">
-	<H1 align="center">Good Browse Results Buddy WOO!</H1><br>
-	<H2 align="center">Browse Results:</H2><br>
+	<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
+		<H1 align="center">Browse Results</H1><br>
+	</div>
 	<Center>
 	<FORM action="/fabflix/customer/main" method=GET align=center>
-		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
+		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
-	<FORM ACTION="/fabflix/customer/cart" METHOD="get">
-    	<INPUT style="height: 2em; width: 25em" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
+	<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
+    	<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>
 	</Center>
 	<table align="center"style"border: solid" border="1"/>

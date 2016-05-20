@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
 		<TITLE>Checkout Succeeded</TITLE>
 	</HEAD>
+	<div align="right"><%@include file="quickSearch.jsp"%></div>
 <BODY bgcolor = "cccccc">
 	<CENTER>
 		<H1>Successfully Checked Out!</H1>

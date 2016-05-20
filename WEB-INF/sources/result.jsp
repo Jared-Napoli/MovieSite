@@ -26,9 +26,11 @@
 
 <HEAD>
 	<link rel="stylesheet" type="text/css" href="../mystyle.css">
+	<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
 	<TITLE>Result Page</TITLE>
+</div>
 </HEAD>
-
+<div align="right"><%@include file="quickSearch.jsp"%></div>
 
 <script>
 	function sortByTitle() {
