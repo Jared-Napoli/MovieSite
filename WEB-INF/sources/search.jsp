@@ -16,16 +16,16 @@
 		<INPUT TYPE="submit" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Return To Main Page">
 	</FORM>
 	<div style="color:black; font-family: Verdana; font-weight: bold; font-size: 22px; padding:10px;">
-	<FORM ACTION="/fabflix/customer/search/result" METHOD="get">
-		Title: <INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="title">
+	<FORM ACTION="/fabflix/customer/search/result" METHOD="get" align="center">
+		<label for="title">Title:</label><INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="title">
 		<br>
-		Year: <INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="year">
+		<label for="year">Year:</label><INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="year">
 		<br>
-		Director: <INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="director">
+		<label for="director">Director:</label><INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="director">
 		<br>
-		Star's First Name: <INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="a_first_name">
+		<label for="a_first_name">Star's First Name:</label><INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="a_first_name">
 		<br>
-		Star's Last Name: <INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="a_last_name">
+		<label for="a_last_name">Star's Last Name:</label><INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="a_last_name">
 	</div>
 		<INPUT TYPE="HIDDEN" NAME="orderBy" VALUE="title">
 		<INPUT TYPE="HIDDEN" NAME="direction" VALUE="ASC">
