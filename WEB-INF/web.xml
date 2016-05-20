@@ -246,12 +246,22 @@
 
   <servlet>
     <servlet-name>BackgroundSearchServlet</servlet-name>
-    <servlet-class>backgroundSearch</servlet-class>
+    <servlet-class>Servlets.BackgroundSearch</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>BackgroundSearchServlet</servlet-name>
-    <url-pattern>/landpage/backgroundSearch/*</url-pattern>
+    <url-pattern>/customer/BackgroundSearch/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>QuickSearchServlet</servlet-name>
+    <servlet-class>Servlets.QuickSearchQuery</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>QuickSearchServlet</servlet-name>
+    <url-pattern>/customer/QuickSearchQuery/*</url-pattern>
   </servlet-mapping>
 
 </web-app>

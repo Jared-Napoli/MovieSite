@@ -116,54 +116,54 @@
 
 		List<Movie> movies = sampleMovie.searchMovie(m_title, year, m_director, f_name, l_name, orderBy, direction);
 		for(Movie movie: movies) {
-		results++;
-		if(results <= currResult) continue;
+			results++;
+			if(results <= currResult) continue;
 
-		String starring_query = "select * from stars where id in(select star_id from stars_in_movies where movie_id ='" + movie.id + "')";
-		List<Star> stars_in = Star.getStarList(starring_query);
+			String starring_query = "select * from stars where id in(select star_id from stars_in_movies where movie_id ='" + movie.id + "')";
+			List<Star> stars_in = Star.getStarList(starring_query);
 
-		String genres_query = "select * from genres where id in(select genre_id from genres_in_movies where movie_id ='" + movie.id + "')"; 
-		List<Genre> genres_in = Genre.getGenreList(genres_query);
+			String genres_query = "select * from genres where id in(select genre_id from genres_in_movies where movie_id ='" + movie.id + "')"; 
+			List<Genre> genres_in = Genre.getGenreList(genres_query);
 
-%>
-		<tr>
-			<%@ include file="movierowview.jsp" %>
-			<td>
-				<% 
-				for(Star star: stars_in) {  
-				%>
-				
-				<a href=/fabflix/customer/star/<%=star.id%>><%=star.first_name%> <%=star.last_name%><br> </a></H4>
-				
-				<% 
-					} 
-				%>
-			</td>
-			<td>
-				<% for(Genre genre: genres_in) { %>
-				
-				<%=genre.name%></br>
-				
-				<%
-					}
-				%>
-			</td>
-		</tr>
-<%
-	if(results == movies.size()) {
-		numResults = 0;
-		break;
-	} 
+			%>
+				<tr>
+					<%@ include file="movierowview.jsp" %>
+					<td>
+						<% 
+						for(Star star: stars_in) {  
+						%>
+						
+						<a href=/fabflix/customer/star/<%=star.id%>><%=star.first_name%> <%=star.last_name%><br> </a></H4>
+						
+						<% 
+							} 
+						%>
+					</td>
+					<td>
+						<% for(Genre genre: genres_in) { %>
+						
+						<%=genre.name%></br>
+						
+						<%
+							}
+						%>
+					</td>
+				</tr>
+			<%
+			if(results == movies.size()) {
+				numResults = 0;
+				break;
+			} 
 
 
-	if(results == currResult + numResults) {
-		if(results == movies.size()) {
-		numResults = 0;
-		} 
-		break;
-	}
-	System.out.println("Dubugging shit");
-}
+			if(results == currResult + numResults) {
+				if(results == movies.size()) {
+				numResults = 0;
+				} 
+				break;
+			}
+			System.out.println("Dubugging shit");
+		}
 %>
 	</table>
 	<center>

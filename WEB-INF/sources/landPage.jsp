@@ -14,8 +14,9 @@
   		<link rel="stylesheet" type="text/css" href="../mystyle.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
       <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
   		<TITLE>Home Page</TITLE>
 	</HEAD>
 	<td>
@@ -36,8 +37,17 @@
     <INPUT ID = "checkOut" TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Checkout"></INPUT>
 </FORM>
 
-    <form ACTION="/fabflix/customer/search" METHOD="get" name='myForm'>
-        <input id="autocomplete" type='text' onkeyup="autocompleteSearch();" name='search' placeholder="Search.." style="width: 280px;">
+    <form ACTION="/fabflix/customer/search/result" METHOD="get" name='myForm'>
+        <input id="autocomplete" type='text' onkeyup="autocompleteSearch();" name='title' placeholder="Search.." style="width: 280px;">
+        <INPUT TYPE="HIDDEN" NAME="orderBy" VALUE="title">
+        <INPUT TYPE="HIDDEN" NAME="direction" VALUE="ASC">
+        <INPUT TYPE="HIDDEN" NAME="numResults" VALUE="10">
+        <INPUT TYPE="HIDDEN" NAME="currResult" VALUE="0">
+        <INPUT TYPE="HIDDEN" NAME="totalResults" VALUE="0">
+        <INPUT TYPE="HIDDEN" NAME="year" VALUE="">
+        <INPUT TYPE="HIDDEN" NAME="director" VALUE="">
+        <INPUT TYPE="HIDDEN" NAME="a_first_name" VALUE="">
+        <INPUT TYPE="HIDDEN" NAME="a_last_name" VALUE="">
         <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Quick Search">
     </form>
     
@@ -82,15 +92,10 @@ function autocompleteSearch()
               response(result);
           }
       });
-    
-    // $('#autocomplete').autocomplete({
-    //   source: ['black', 'white', 'red black']
-    //   });
-
     }
   }
 
-  ajaxRequest.open("GET", "/fabflix/landpage/backgroundSearch/" + document.myForm.search.value, true);
+  ajaxRequest.open("GET", "/fabflix/customer/BackgroundSearch/" + document.myForm.title.value, true);
   ajaxRequest.send(null);
 }
 </script>
