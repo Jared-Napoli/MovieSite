@@ -37,7 +37,7 @@ public class EmployeeFilter implements Filter
         String password;
 
         String path = ((HttpServletRequest) request).getRequestURI();
-        if (path.equals("/fabflix/_dashboard")) 
+        if (path.equals("/project4/_dashboard")) 
         {
             System.out.println("already going to dashboard");
             //chain.doFilter(request, response);
@@ -58,7 +58,7 @@ public class EmployeeFilter implements Filter
                     System.out.println("Incorrect employee filter");
                     boolean error = true;
                     request.getSession().setAttribute("error", (Object) error);
-                    response.sendRedirect("/fabflix/_dashboard");
+                    response.sendRedirect("/project4/_dashboard");
                 }
                 else
                 {
@@ -78,7 +78,7 @@ public class EmployeeFilter implements Filter
                   //request.getSession().setAttribute("url", (Object)url);
                     System.out.println("filter null customer");
                     request.getSession().setAttribute("url", (Object)url);
-                    response.sendRedirect("/fabflix/_dashboard");
+                    response.sendRedirect("/project4/_dashboard");
                 }
                 else
                 {

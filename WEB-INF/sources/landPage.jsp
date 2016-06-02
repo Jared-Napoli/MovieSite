@@ -26,15 +26,15 @@
     <div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
 		  <H1 align="center">Welcome USER!</H1>
   </div>
-	<FORM ACTION="/fabflix/customer/search"
+	<FORM ACTION="/project4/customer/search"
       METHOD="get">
     <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Search"></INPUT>
   </FORM>
-    <FORM ACTION="/fabflix/customer/browse" METHOD="get">
+    <FORM ACTION="/project4/customer/browse" METHOD="get">
     <INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Browse">
     </INPUT>
 </FORM>
-<FORM ACTION="/fabflix/customer/checkout"
+<FORM ACTION="/project4/customer/checkout"
       METHOD="get">
     <INPUT ID = "checkOut" TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Checkout"></INPUT>
 </FORM>

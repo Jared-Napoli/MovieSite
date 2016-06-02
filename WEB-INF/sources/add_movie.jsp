@@ -26,7 +26,7 @@
 				<%=line%><br>
 		<%	}
 		%>
-	<FORM action="/fabflix/employee/main" method=GET align=center>
+	<FORM action="/project4/employee/main" method=GET align=center>
 		<INPUT style="height: 2em; width: 25em" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 </BODY>

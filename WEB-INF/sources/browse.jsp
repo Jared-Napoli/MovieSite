@@ -19,10 +19,10 @@
 	 <div style="color:black; font-family: Verdana; font-size: 22px; padding:20px;">
 	<H1 align="center">Browse Fabflix</H1>
 	</div>
-	<FORM action="/fabflix/customer/main" method=GET align=center>
+	<FORM action="/project4/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
-	<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
+	<FORM ACTION="/project4/customer/checkout" METHOD="get">
     	<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>
 	<div style="font-family: Verdana; font-weight: bold; font-size: 14px; padding:10px;">
@@ -34,7 +34,7 @@
 			for(Genre genre: (List<Genre>) request.getAttribute("genres")) {
 		%>
 			<tr>
-				<td style="border: solid;"><a href=/fabflix/customer/browse/genre/<%=genre.name%>><%=genre.name%></a></td>
+				<td style="border: solid;"><a href=/project4/customer/browse/genre/<%=genre.name%>><%=genre.name%></a></td>
 			</tr>
 		<%
 			}	
@@ -50,7 +50,7 @@
 			for(String letter: (List<String>) request.getAttribute("letters")) {
 		%>
 			<tr>
-				<td style="border: solid;"><a href=/fabflix/customer/browse/letter/<%=letter%>><%=letter%></a></td>
+				<td style="border: solid;"><a href=/project4/customer/browse/letter/<%=letter%>><%=letter%></a></td>
 			</tr>
 		<%
 			}	
@@ -58,7 +58,7 @@
 		</table>
 		</td>
 	</table>
-	<BR><BR><FORM action="/fabflix/customer/main" method=GET align=center>
+	<BR><BR><FORM action="/project4/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 </BODY>

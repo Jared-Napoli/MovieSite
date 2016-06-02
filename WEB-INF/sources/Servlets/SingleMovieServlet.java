@@ -24,7 +24,7 @@ public class SingleMovieServlet extends HttpServlet {
     movie = Movie.getMovie(id); 
     String starring_query = "select * from stars where id in(select star_id from stars_in_movies where movie_id ='" + movie.id + "')";
     List<Star> stars_in = Star.getStarList(starring_query);
-    String cart_url = "/customer/fabflix/customer/checkout/" + id;
+    String cart_url = "/customer/project4/customer/checkout/" + id;
     request.setAttribute("movie", (Object) movie);
     request.setAttribute("stars_in", (Object) stars_in);
     request.setAttribute("cart_url", (Object) cart_url);

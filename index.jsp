@@ -43,7 +43,7 @@
 <H1 ALIGN="CENTER">Welcome to FabFlix!</H1>
 </div>
 <%
-    String url = "/fabflix/customer/main";
+    String url = "/project4/customer/main";
     if(request.getSession().getAttribute("url")!= null)
         url = (String)request.getSession().getAttribute("url");
 %>

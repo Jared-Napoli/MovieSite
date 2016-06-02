@@ -19,7 +19,7 @@
 <BODY bgcolor = "cccccc">
 	<CENTER>
 		<H1>Successfully Checked Out!</H1>
-	<FORM action="/fabflix/customer/main" method=GET align=center>
+	<FORM action="/project4/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 </BODY>

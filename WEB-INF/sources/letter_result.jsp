@@ -20,10 +20,10 @@
 		<H1 align="center">Browse Results</H1><br>
 	</div>
 	<Center>
-	<FORM action="/fabflix/customer/main" method=GET align=center>
+	<FORM action="/project4/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
-	<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
+	<FORM ACTION="/project4/customer/checkout" METHOD="get">
     	<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>
 	</Center>
@@ -46,8 +46,7 @@
 		for(Movie movie: movies) {
 	%>
 		<tr>
-			<td><img src=<%=movie.banner_url%> alt="Picture failed to load." height="140" width="100"></td>
-			<td style="border-right: solid;"><a href=/fabflix/customer/movie/<%=movie.id%>><%=movie.title%></a></td>
+			<%@ include file="movierowview.jsp" %>
 		</tr>
 	<%
 		}

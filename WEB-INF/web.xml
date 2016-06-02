@@ -200,6 +200,15 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>TooltipServlet</servlet-name>
+    <servlet-class>Servlets.TooltipServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TooltipServlet</servlet-name>
+    <url-pattern>/customer/tooltip/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>DashboardServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/dashboard.jsp</jsp-file>
   </servlet>
@@ -262,6 +271,24 @@
   <servlet-mapping>
     <servlet-name>QuickSearchServlet</servlet-name>
     <url-pattern>/customer/QuickSearchQuery/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AndroidAuthServlet</servlet-name>
+    <servlet-class>Servlets.AndroidAuthServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AndroidAuthServlet</servlet-name>
+    <url-pattern>/android/auth/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AndroidMovieServlet</servlet-name>
+    <servlet-class>Servlets.AndroidMovieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AndroidMovieServlet</servlet-name>
+    <url-pattern>/android/movie/*</url-pattern>
   </servlet-mapping>
 
 </web-app>
