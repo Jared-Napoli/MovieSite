@@ -15,7 +15,7 @@
 		<script type="text/javascript">
         function callServlet(id) {
         	var idd = id;
-            document.location.href="/project4/TestServlet/" + id + "";
+            document.location.href="/fabflix/TestServlet/" + id + "";
         }
     	</script>
   		<link rel="stylesheet" type="text/css" href="../mystyle.css">
@@ -28,20 +28,20 @@
 		Movie movie = (Movie) request.getAttribute("movie");
 		List<Star> stars_in = (List<Star>) request.getAttribute("stars_in");
 		//String cart_url = (String) request.getAttribute("cart_url");
-		String cart_url = "/project4/customer/cart/" + movie.id;
+		String cart_url = "/fabflix/customer/cart/" + movie.id;
 	%>
 	<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
 	<H1 align=center><%=movie.title%>
 	</div>
 	<div style="font-family: Verdana; font-weight: bold; font-size: 14px; padding:10px;">
-	<FORM action="/project4/customer/main" method=GET>
+	<FORM action="/fabflix/customer/main" method=GET>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 		<FORM action=<%=cart_url%> method="GET">
 			<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Add to Cart">
 		</FORM>
 	</H1>
-	<FORM ACTION="/project4/customer/checkout" METHOD="get">
+	<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     <INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>
 	<img src=<%=movie.banner_url%> alt="Picture failed to load." align="middle" height="140" width="100">
@@ -54,7 +54,7 @@
 		<tr>
 		<td><img src=<%=curr_star.photo_url%> alt="Picture failed to load." height="140" width="100"></td>
 		<td>
-			<a href=/project4/customer/star/<%=curr_star.id%>><%=curr_star.first_name%> <%=curr_star.last_name%></a></H4>
+			<a href=/fabflix/customer/star/<%=curr_star.id%>><%=curr_star.first_name%> <%=curr_star.last_name%></a></H4>
 		</td>
 	</tr>
 <%

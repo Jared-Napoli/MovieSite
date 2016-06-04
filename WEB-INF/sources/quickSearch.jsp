@@ -55,11 +55,11 @@
             }
           }
 
-          ajaxRequest.open("GET", "/project4/customer/BackgroundSearch/" + document.myForm.title.value, true);
+          ajaxRequest.open("GET", "/fabflix/customer/BackgroundSearch/" + document.myForm.title.value, true);
           ajaxRequest.send(null);
         }
     </script>
-    <FORM ACTION="/project4/customer/search/result" METHOD="get" name='myForm'>
+    <FORM ACTION="/fabflix/customer/search/result" METHOD="get" name='myForm'>
         <input id="autocomplete" type='text' onkeyup="autocompleteSearch();" name='title' placeholder="Search.." style="width: 280px;">
         <INPUT TYPE="HIDDEN" NAME="orderBy" VALUE="title">
         <INPUT TYPE="HIDDEN" NAME="direction" VALUE="ASC">

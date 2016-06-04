@@ -30,7 +30,7 @@
 		<tr>
 		<td><img src=<%=movie.banner_url%> alt="Picture failed to load." height="140" width="100"></td>
 		<td>
-			<H3><a href=/project4/customer/movie/<%=movie.id%>><%=movie.title%></a></H3>
+			<H3><a href=/fabflix/customer/movie/<%=movie.id%>><%=movie.title%></a></H3>
 		</td>
 	</tr>
 <%
@@ -38,10 +38,10 @@
 %>	
 	<H3>Total: $<%=cart.size() * 15.99%></H3>
 </div>
-	<FORM action="/project4/customer/main" method=GET align=center>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM><BR><BR>
-	<FORM action="/project4/customer/checkout/info" method=GET align=center>
+	<FORM action="/fabflix/customer/checkout/info" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Proceed to Checkout">
 	</FORM><BR><BR>
 	<button onclick="goBack()" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080">Return to Previous Page</button><BR><BR>

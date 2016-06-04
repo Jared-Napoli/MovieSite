@@ -6,6 +6,9 @@ import java.sql.*;
 import java.text.*;
 import java.util.*;
 import javax.servlet.*;
+import javax.sql.*;
+//import javax.ejb.*;
+import javax.naming.*;
 import javax.servlet.http.*;
 
 public class Movie {
@@ -43,8 +46,10 @@ public class Movie {
 		List<Movie> movieList = new ArrayList<Movie>();
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			// D2eclare our statement
 			Statement statement = dbcon.createStatement();
 			String query = "";
@@ -120,7 +125,11 @@ public class Movie {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Context context = new InitialContext();
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			Statement statement = dbcon.createStatement();
 			String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id = '" + id + "')";
 
@@ -158,7 +167,11 @@ public class Movie {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			//Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			Statement statement = dbcon.createStatement();
 			String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id in (select id from stars where first_name= '" + first_name + "' and last_name= '" + last_name + "'))";
 
@@ -194,7 +207,11 @@ public class Movie {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Context context = new InitialContext();
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			Statement statement = dbcon.createStatement();
 			String query = "select * from movies where id='" + id + "'";
 
@@ -231,7 +248,11 @@ public class Movie {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			//Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			Statement statement = dbcon.createStatement();
 			//String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id in (select id from stars where first_name= '" + first_name + "' and last_name= '" + last_name + "'))";
 
@@ -267,7 +288,11 @@ public class Movie {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Context context = new InitialContext();
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			Statement statement = dbcon.createStatement();
 			String query = "select distinct left(title,1) as letter from movies order by letter";
 

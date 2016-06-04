@@ -20,10 +20,10 @@
 	<H1 align="center">Browse Results</H1>
 </div>
 	<center>
-	<FORM action="/project4/customer/main" method=GET align=center>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
-	<FORM ACTION="/project4/customer/checkout" METHOD="get">
+	<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     	<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>
 </center>

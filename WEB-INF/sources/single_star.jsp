@@ -15,7 +15,7 @@
 		<script type="text/javascript">
         function callServlet(id) {
         	var idd = id;
-            document.location.href="/project4/TestServlet/" + id + "";
+            document.location.href="/fabflix/TestServlet/" + id + "";
         }
     	</script>
   		<link rel="stylesheet" type="text/css" href="../mystyle.css">
@@ -33,10 +33,10 @@
 	</div>
 	</H1>
 	<div style="font-family: Verdana; font-weight: bold; font-size: 14px; padding:10px;">
-	<FORM action="/project4/customer/main" method=GET>
+	<FORM action="/fabflix/customer/main" method=GET>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
-	<FORM ACTION="/project4/customer/checkout" METHOD="get">
+	<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     <INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" ID = "checkOut" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 	</FORM>
 	<img src=<%=star.photo_url%> alt="Picture failed to load." align="middle" height="140" width="100">

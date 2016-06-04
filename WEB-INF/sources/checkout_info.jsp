@@ -11,11 +11,11 @@
 	<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
 	<H1 align="center">You Are Checking Out</H1>
 	</div>
-	<FORM action="/project4/customer/main" method=GET align=center>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 	<div style="font-family: Verdana; font-weight: bold; font-size: 14px; padding:10px;">
-	<FORM ACTION="/project4/customer/checkout/process" METHOD="post">
+	<FORM ACTION="/fabflix/customer/checkout/process" METHOD="post">
 		First Name: <INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="first_name">
 		<br>
 		Last Name: <INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="last_name">

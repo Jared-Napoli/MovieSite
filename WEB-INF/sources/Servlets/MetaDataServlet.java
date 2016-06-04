@@ -7,6 +7,9 @@ import java.sql.*;
 import java.text.*;
 import java.util.*;
 import javax.servlet.*;
+import javax.sql.*;
+//import javax.ejb.*;
+import javax.naming.*;
 import javax.servlet.http.*;
 import SQLClasses.*;
 
@@ -22,7 +25,10 @@ public class MetaDataServlet extends HttpServlet {
     try
     {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
-        Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+        Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
         Statement statement = dbcon.createStatement();
         Statement insert;
 

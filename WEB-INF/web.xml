@@ -17,6 +17,14 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
+<!--
+  <listener>
+        <listener-class> com.onjava.dbcp.DBCPoolingListener</listener-class>
+</listener>
+-->
+
+
+
 
     <security-constraint>
  <web-resource-collection>
@@ -72,6 +80,13 @@
     <servlet-name>LogInServlet</servlet-name>
     <url-pattern></url-pattern>
   </servlet-mapping>
+
+  <!-- This component has a dependency on an external resource-->
+ <resource-ref>
+      <res-ref-name>jdbc/moviedb</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
 
   <servlet>
     <servlet-name>FabFlixServlet</servlet-name>

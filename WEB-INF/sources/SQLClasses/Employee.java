@@ -6,6 +6,9 @@ import java.sql.*;
 import java.text.*;
 import java.util.*;
 import javax.servlet.*;
+import javax.sql.*;
+//import javax.ejb.*;
+import javax.naming.*;
 import javax.servlet.http.*;
 
 public class Employee {
@@ -29,8 +32,11 @@ public class Employee {
 		Employee employee = new Employee();
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Context context = new InitialContext();
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			// Declare our statement
 			Statement statement = dbcon.createStatement();
 			String query = "SELECT * from employees where email='" + e_email + "'" + " and password='" + pw + "'";

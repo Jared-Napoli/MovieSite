@@ -51,13 +51,13 @@ public class AuthenticationFilter implements Filter
           boolean valid = VerifyUtils.verify(gRecaptchaResponse);
           if (!valid) // bad recaptcha
           {
-              response.sendRedirect("/project4");
+              response.sendRedirect("/fabflix");
               chain.doFilter(req, res);
           }
           else //good recaptcha
           {
               String path = ((HttpServletRequest) request).getRequestURI();
-              if (path.equals("/project4/"))
+              if (path.equals("/fabflix/"))
               {
                   System.out.println("already going to login");
                   //chain.doFilter(request, response);
@@ -76,7 +76,7 @@ public class AuthenticationFilter implements Filter
                       if(myCustomer == null)
                       {
                           System.out.println("incorrect user");
-                          response.sendRedirect("/project4");
+                          response.sendRedirect("/fabflix");
                           chain.doFilter(req,res);
                       }
                       System.out.println("good customer from param");
@@ -97,7 +97,7 @@ public class AuthenticationFilter implements Filter
                         //request.getSession().setAttribute("url", (Object)url);
                           System.out.println("filter null customer");
                           request.getSession().setAttribute("url", (Object)url);
-                          response.sendRedirect("/project4");
+                          response.sendRedirect("/fabflix");
                           chain.doFilter(req,res);
                       }
                       else

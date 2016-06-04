@@ -20,7 +20,7 @@
 </div>
 <%@include file="error.jsp" %>
 <%
-    //String url = "/project4/employee/main";
+    //String url = "/fabflix/employee/main";
     //if(request.getSession().getAttribute("url")!= null)
     //  url = (String)request.getSession().getAttribute("url");
     boolean error = false;
@@ -28,7 +28,7 @@
 %>
 
 <div style="font-family: Verdana; font-weight: bold; font-size: 14px; padding:10px;">
-<FORM ACTION="/project4/employee/main"
+<FORM ACTION="/fabflix/employee/main"
       METHOD="POST">
   Email: <INPUT TYPE="TEXT" NAME="email" autofocus="autofocus"><BR>
   Password: <INPUT TYPE="PASSWORD" NAME="password"><BR><BR>

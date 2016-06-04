@@ -5,6 +5,9 @@ import java.net.*;
 import java.sql.*;
 import java.text.*;
 import java.util.*;
+import javax.sql.*;
+//import javax.ejb.*;
+import javax.naming.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -40,7 +43,15 @@ public class Customer {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			//Context initialContext = new InitialContext();
+			//Context environmentContext = (Context) initialContext.lookup("java:comp/env");
+			//String dataResourceName = "jdbc/moviedb";
+			//Class.forName("com.mysql.jdbc.Driver");
+			Context context = new InitialContext();
+			//Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			// Declare our statement
 			Statement statement = dbcon.createStatement();
 			String query = "SELECT * from customers where email='" + u_name + "'" + " and password='" + pw + "'";

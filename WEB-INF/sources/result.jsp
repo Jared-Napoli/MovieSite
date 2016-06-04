@@ -36,39 +36,39 @@
 	function sortByTitle() {
 		if ('<%=orderBy%>' === "title") {
 			if ('<%=direction%>' === "DESC") {
-				document.location.href="/project4/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=title&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=title&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
 			} else {
-				document.location.href="/project4/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=title&direction=DESC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=title&direction=DESC&numResults=" + '<%=numResults%>' + "&currResult=0";
 			}
 		} else {
-				document.location.href="/project4/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=title&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=title&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
 		}
 	}
 
 	function sortByYear() {
 		if ('<%=orderBy%>' === "year") {
 			if ('<%=direction%>' === "ASC") {
-				document.location.href="/project4/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=year&direction=DESC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=year&direction=DESC&numResults=" + '<%=numResults%>' + "&currResult=0";
 			} else {
-				document.location.href="/project4/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=year&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
+				document.location.href="/fabflix/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=year&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
 			}
 		} else {
-			document.location.href="/project4/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=year&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
+			document.location.href="/fabflix/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=year&direction=ASC&numResults=" + '<%=numResults%>' + "&currResult=0";
 		}
 	}
 
 	function updateResults(arg) {
 		if(arg === "next") {
-			document.location.href="/project4/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=" + '<%=orderBy%>' + "&direction=" + '<%=direction%>' + "&numResults=" + '<%=numResults%>' + "&currResult=" + '<%=numResults + currResult%>';
+			document.location.href="/fabflix/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=" + '<%=orderBy%>' + "&direction=" + '<%=direction%>' + "&numResults=" + '<%=numResults%>' + "&currResult=" + '<%=numResults + currResult%>';
 		} else {
-			document.location.href="/project4/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=" + '<%=orderBy%>' + "&direction=" + '<%=direction%>' + "&numResults=" + '<%=numResults%>' + "&currResult=" + '<%=currResult - numResults%>';
+			document.location.href="/fabflix/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=" + '<%=orderBy%>' + "&direction=" + '<%=direction%>' + "&numResults=" + '<%=numResults%>' + "&currResult=" + '<%=currResult - numResults%>';
 		}
 	}
 
 	function changeNumResults() {
 		var selectBox = document.getElementById("selectBox");
     	var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    	document.location.href="/project4/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=" + '<%=orderBy%>'+ "&direction=" + '<%=direction%>' + "&numResults=" + selectedValue + "&currResult=" + '<%=currResult%>';
+    	document.location.href="/fabflix/customer/search/result?title=" + '<%=title%>' + "&year=" + '<%=year%>' + "&director=" + '<%=director%>' + "&a_first_name=" + '<%=a_first_name%>' + "&a_last_name=" + '<%=a_last_name%>' + "&orderBy=" + '<%=orderBy%>'+ "&direction=" + '<%=direction%>' + "&numResults=" + selectedValue + "&currResult=" + '<%=currResult%>';
 	}
 </script>
 
@@ -79,11 +79,11 @@
 	<div style="color:black; padding:8px; font-family: Verdana; font-weight: bold; font-size: 18px;">
 		<H2 align="center">List of Movies </H2>
 	</div>
-	<FORM action="/project4/customer/main" method=GET align=center>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 	<center>
-			<FORM ACTION="/project4/customer/checkout" METHOD="get">
+			<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     		<INPUT ID = "checkOut" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 			</FORM>
 		<% if(currResult > 0) { %>
@@ -135,7 +135,7 @@
 						for(Star star: stars_in) {  
 						%>
 						
-						<a href=/project4/customer/star/<%=star.id%>><%=star.first_name%> <%=star.last_name%><br> </a></H4>
+						<a href=/fabflix/customer/star/<%=star.id%>><%=star.first_name%> <%=star.last_name%><br> </a></H4>
 						
 						<% 
 							} 
@@ -180,7 +180,7 @@
 		  	<option value="100">100</option>
 		</select> 
 	<button onClick="updateResults('next')" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080">Next</button>
-	<BR><BR><FORM action="/project4/customer/main" method=GET align=center>
+	<BR><BR><FORM action="/fabflix/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 	</center>

@@ -7,6 +7,9 @@ import java.sql.*;
 import java.text.*;
 import java.util.*;
 import javax.servlet.*;
+import javax.sql.*;
+//import javax.ejb.*;
+import javax.naming.*;
 import javax.servlet.http.*;
 import SQLClasses.*;
 
@@ -22,7 +25,7 @@ public class LogInServlet extends HttpServlet {
     System.out.println("LogIn Servlet!");
     //request.setAttribute("status", "fail");
     //request.setAttribute("msg", "It appears that you don't have a session.");
-    String url = "/project4/customer/main";
+    String url = "/fabflix/customer/main";
     String order = "title";
     String direction = "ASC";
     ArrayList<Movie> cart = new ArrayList<Movie>();

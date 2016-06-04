@@ -5,8 +5,11 @@ import java.net.*;
 import java.sql.*;
 import java.text.*;
 import java.util.*;
-//import javax.servlet.*;
-//import javax.servlet.http.*;
+import javax.servlet.*;
+import javax.sql.*;
+//import javax.ejb.*;
+import javax.naming.*;
+import javax.servlet.http.*;
 
 public class Star
 {
@@ -34,7 +37,10 @@ public class Star
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			Statement statement = dbcon.createStatement();
 			Statement insert;
 
@@ -68,7 +74,10 @@ public class Star
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			Statement statement = dbcon.createStatement();
 
 			String query = "SELECT * from stars where id = '" + id + "'";
@@ -107,7 +116,10 @@ public class Star
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
+			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
+			Connection dbcon = dataSource.getConnection();
 			Statement statement = dbcon.createStatement();
 
 			// Perform the query

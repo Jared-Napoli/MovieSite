@@ -7,6 +7,9 @@ import java.sql.*;
 import java.text.*;
 import java.util.*;
 import javax.servlet.*;
+import javax.sql.*;
+//import javax.ejb.*;
+import javax.naming.*;
 import javax.servlet.http.*;
 import SQLClasses.*;
 

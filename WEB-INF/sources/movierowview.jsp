@@ -15,7 +15,7 @@
 </form>
 <td style="border-right: solid;"><%=movie.id%></td>
 <td><img src=<%=movie.banner_url%> alt="Picture failed to load." height="140" width="100"></td>
-<td style="border-right: solid;"><a class="movie_link" href=/project4/customer/movie/<%=movie.id%>><%=movie.title%></a></td>
+<td style="border-right: solid;"><a class="movie_link" href=/fabflix/customer/movie/<%=movie.id%>><%=movie.title%></a></td>
 <td style="border-right: solid;"><%=movie.year%></td>
 <td style="border-right: solid;"><%=movie.director%></td>
 <!-- <td><a href="<%=movie.banner_url%>">Banner url</a></td>  -->
@@ -29,7 +29,7 @@ $('.movie_link').ready(function() {
     	items: "a",
     	position: { my: "left+15 top", at: "right center" },
     	content:function(callback) {
-        	$.get('/project4/customer/tooltip/' + $(this).parent().parent().find(".hiddenID").serialize() , {}, function(data) {
+        	$.get('/fabflix/customer/tooltip/' + $(this).parent().parent().find(".hiddenID").serialize() , {}, function(data) {
             callback(data); //**call the callback function to return the value**
         });
     	},

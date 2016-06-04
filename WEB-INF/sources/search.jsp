@@ -12,11 +12,11 @@
 	<div style="color:black; padding:8px; font-family: Verdana; font-weight: bold; font-size: 22px;">
 		<H1 align="center">Search Fabflix</H1>
 	</div>
-	<FORM action="/project4/customer/main" method=GET align=center>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
 		<INPUT TYPE="submit" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Return To Main Page">
 	</FORM>
 	<div style="color:black; font-family: Verdana; font-weight: bold; font-size: 22px; padding:10px;">
-	<FORM ACTION="/project4/customer/search/result" METHOD="get" align="center">
+	<FORM ACTION="/fabflix/customer/search/result" METHOD="get" align="center">
 		<label for="title">Title:</label><INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="title">
 		<br>
 		<label for="year">Year:</label><INPUT TYPE="TEXT" style="font-family: Verdana; font-size: 14px;" NAME="year">
@@ -36,7 +36,7 @@
 		<INPUT TYPE="SUBMIT" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" VALUE="Search"><br>
 	</FORM>
 			<br>
-			<FORM ACTION="/project4/customer/checkout" METHOD="get">
+			<FORM ACTION="/fabflix/customer/checkout" METHOD="get">
     		<INPUT ID = "checkOut" style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="SUBMIT" VALUE="Checkout"></INPUT>
 			</FORM>
 		</CENTER>

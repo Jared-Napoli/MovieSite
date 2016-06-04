@@ -6,6 +6,9 @@ import java.sql.*;
 import java.text.*;
 import java.util.*;
 import javax.servlet.*;
+import javax.sql.*;
+//import javax.ejb.*;
+import javax.naming.*;
 import javax.servlet.http.*;
 import SQLClasses.*;
 
@@ -29,6 +32,6 @@ public class TooltipServlet extends HttpServlet {
         out.println("<a href=" + movie.trailer_url + ">Trailer URL</a><br>");
         out.println("Starring:<br>");
         for(Star star: stars_in)
-            out.println("&emsp;<a href=/project4/customer/star/" + star.id + ">" + star.first_name + " " + star.last_name + "</a><br>");
+            out.println("&emsp;<a href=/fabflix/customer/star/" + star.id + ">" + star.first_name + " " + star.last_name + "</a><br>");
     }
 }

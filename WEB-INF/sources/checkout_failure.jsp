@@ -21,10 +21,10 @@
 		<div style="color:black; font-family: Verdana; font-size: 22px; padding:10px;">
 		<H1>Oops, Failed to Checkout!</H1>
 	</div>
-	<FORM action="/project4/customer/checkout/info" method=GET align=center>
+	<FORM action="/fabflix/customer/checkout/info" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Retry">
 	</FORM>
-	<FORM action="/project4/customer/main" method=GET align=center>
+	<FORM action="/fabflix/customer/main" method=GET align=center>
 		<INPUT style="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 14px; background-color: #808080" TYPE="submit" VALUE="Return To Main Page">
 	</FORM>
 </BODY>
