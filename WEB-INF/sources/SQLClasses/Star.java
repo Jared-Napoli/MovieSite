@@ -42,22 +42,36 @@ public class Star
 			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
 			Connection dbcon = dataSource.getConnection();
 			Statement statement = dbcon.createStatement();
-			Statement insert;
+			PreparedStatement insert = null;
 
 			String [] names = name.split(" ");
 	        if(names.length == 1)//inserted as last name, "" is first name
 	        {
-	              insert = dbcon.createStatement();
+	              /*insert = dbcon.createStatement();
 	              insert.executeUpdate("insert into stars (first_name, last_name) values ('', '" + names[0] + "')");
 	              System.out.println("Inserted " + names[0] + " into the database");
-	              insert.close();
+	              insert.close();*/
+
+	            String query = "insert into stars (first_name, last_name) values ('', ?)";
+        		insert = dbcon.prepareStatement(query);
+        		insert.setString(1, names[0]);
+        		insert.executeUpdate();
+          		System.out.println("Inserted " + names[0] + " into the database");
+          		insert.close();
 	        }
 	        else
 	        {
-	            insert = dbcon.createStatement();
-	            insert.executeUpdate("insert into stars (first_name, last_name) values ('" + names[0] + "', '" + names[1] + "')");
-	            System.out.println("Inserted " + names[0] + " " + names[1] +  " into the database");
-	            insert.close();
+				String query = "insert into stars (first_name, last_name) values (?, ?)";
+        		insert = dbcon.prepareStatement(query);
+        		insert.setString(1, names[0]);
+        		insert.setString(2, names[1]);
+        		insert.executeUpdate();
+          		insert.close();
+
+	            //insert = dbcon.createStatement();
+	            //insert.executeUpdate("insert into stars (first_name, last_name) values ('" + names[0] + "', '" + names[1] + "')");
+	            //System.out.println("Inserted " + names[0] + " " + names[1] +  " into the database");
+	            //insert.close();
 	        }
 	        statement.close();
 	        dbcon.close();
@@ -78,12 +92,14 @@ public class Star
 			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
 			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
 			Connection dbcon = dataSource.getConnection();
-			Statement statement = dbcon.createStatement();
+			PreparedStatement queryStatement = null;
 
-			String query = "SELECT * from stars where id = '" + id + "'";
+			String query = "SELECT * from stars where id = ?";
 
 			// Perform the query
-			ResultSet rs = statement.executeQuery(query);
+			queryStatement = dbcon.prepareStatement(query);
+			queryStatement.setString(1, id);
+			ResultSet rs = queryStatement.executeQuery();
 
 			// Iterate through each row of rs
 			if (rs.next())
@@ -97,7 +113,7 @@ public class Star
 				return Star;
 			}
 			rs.close();
-			statement.close();
+			queryStatement.close();
 			dbcon.close();
 		}
 		catch (Exception ex)

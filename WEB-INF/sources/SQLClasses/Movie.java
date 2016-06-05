@@ -173,11 +173,14 @@ public class Movie {
 			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/moviedb");
 			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
 			Connection dbcon = dataSource.getConnection();
-			Statement statement = dbcon.createStatement();
-			String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id in (select id from stars where first_name= '" + first_name + "' and last_name= '" + last_name + "'))";
+			PreparedStatement queryStatement = null;
+			String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id in (select id from stars where first_name= ? and last_name= ?))";
+			queryStatement = dbcon.prepareStatement(query);
+        	queryStatement.setString(1, first_name);
+        	queryStatement.setString(2, last_name);
 
 			// Perform the query
-			ResultSet rs = statement.executeQuery(query);
+			ResultSet rs = queryStatement.executeQuery();
 
 			// Iterate through each row of rs
 			while (rs.next()) {
@@ -191,7 +194,7 @@ public class Movie {
 				movieList.add(movie);
 			}
 			rs.close();
-			statement.close();
+			queryStatement.close();
 			dbcon.close();
 
 		} catch (Exception ex) {
@@ -213,11 +216,13 @@ public class Movie {
 			//Context context = new InitialContext();
 			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
 			Connection dbcon = dataSource.getConnection();
-			Statement statement = dbcon.createStatement();
-			String query = "select * from movies where id='" + id + "'";
+			PreparedStatement queryStatement = null;
+			String query = "select * from movies where id= ?";
+			queryStatement = dbcon.prepareStatement(query);
+			queryStatement.setString(1, id);
 
 			// Perform the query
-			ResultSet rs = statement.executeQuery(query);
+			ResultSet rs = queryStatement.executeQuery();
 
 			// Iterate through each row of rs
 			while (rs.next()) {
@@ -230,7 +235,7 @@ public class Movie {
 				    rs.getString("trailer_url"));
 			}
 			rs.close();
-			statement.close();
+			queryStatement.close();
 			dbcon.close();
 
 		} catch (Exception ex) {
@@ -315,31 +320,3 @@ public class Movie {
 		return charList;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
