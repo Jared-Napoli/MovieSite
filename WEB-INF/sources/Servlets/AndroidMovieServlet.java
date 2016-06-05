@@ -36,6 +36,7 @@ public class AndroidMovieServlet extends HttpServlet {
 
       System.out.println("keywords size" + keyWordsForQuery.length);
       try {
+          long startTime = System.nanoTime();
           Class.forName("com.mysql.jdbc.Driver").newInstance();
 
           Context context = new InitialContext();
@@ -66,6 +67,9 @@ public class AndroidMovieServlet extends HttpServlet {
               movieTitles.append(rs.getString("title") + "@@@");
           }
           
+          long endTime = System.nanoTime();
+          long elapsedTime = endTime - startTime;
+
           rs.close();
           statement.close();
           dbcon.close();

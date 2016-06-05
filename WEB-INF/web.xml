@@ -70,15 +70,6 @@
     <url-pattern>/employee/*</url-pattern>
   </filter-mapping>
 
-<filter>
-    <filter-name>SearchTimeFilter</filter-name>
-    <filter-class>Filters.SearchTimeFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>SearchTimeFilter</filter-name>
-    <url-pattern>/customer/browse/*</url-pattern>
-  </filter-mapping>
-
   <!-- Define servlets that are included in the example application -->
 
   <servlet>
