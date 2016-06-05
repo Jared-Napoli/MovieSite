@@ -42,11 +42,18 @@ public class CreditCard {
 			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
 			Connection dbcon = dataSource.getConnection();
 			// Declare our statement
-			Statement statement = dbcon.createStatement();
-			String query = "SELECT * from creditcards where first_name='" + f_name + "'" + " and last_name='" + l_name + "' and id='" + cc_num +"'";
+			//Statement statement = dbcon.createStatement();
+			PreparedStatement queryStatement = null;
+			String query = "select * from creditcards where first_name = ? and last_name = ? and id = ?";
+			queryStatement = dbcon.prepareStatement(query);
+        	queryStatement.setString(1, f_name);
+        	queryStatement.setString(2, l_name);
+        	queryStatement.setString(3, cc_num);
+			//String query = "SELECT * from creditcards where first_name='" + f_name + "'" + " and last_name='" + l_name + "' and id='" + cc_num +"'";
 
 			// Perform the query
-			ResultSet rs = statement.executeQuery(query);
+			//ResultSet rs = statement.executeQuery(query);
+			ResultSet rs = queryStatement.executeQuery();
 
 			// Iterate through each row of rs
 			if (rs.next()) {
@@ -56,13 +63,15 @@ public class CreditCard {
 				    rs.getString("last_name"),
 				    rs.getString("expiration"));
 				rs.close();
-				statement.close();
+				//statement.close();
+				queryStatement.close();
 				dbcon.close();
 				return cc;
 			}
 
 			rs.close();
-			statement.close();
+			//statement.close();
+			queryStatement.close();
 			dbcon.close();
 
 		} catch (Exception ex) {

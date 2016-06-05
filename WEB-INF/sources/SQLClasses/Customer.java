@@ -53,14 +53,21 @@ public class Customer {
 			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
 			Connection dbcon = dataSource.getConnection();
 			// Declare our statement
-			Statement statement = dbcon.createStatement();
-			String query = "SELECT * from customers where email='" + u_name + "'" + " and password='" + pw + "'";
+			//Statement statement = dbcon.createStatement();
+			PreparedStatement queryStatement = null;
+			String query = "select * from customers where email = ? and password = ?";
+			queryStatement = dbcon.prepareStatement(query);
+        	queryStatement.setString(1, u_name);
+        	queryStatement.setString(2, pw);
+			//String query = "SELECT * from customers where email='" + u_name + "'" + " and password='" + pw + "'";
 
 			// Perform the query
-			ResultSet rs = statement.executeQuery(query);
+			//ResultSet rs = statement.executeQuery(query);
+			ResultSet rs = queryStatement.executeQuery();
 
 			// Iterate through each row of rs
-			if (rs.next()) {
+			if (rs.next())
+			{
 				customer = new Customer(
 				    rs.getInt("id"),
 				    rs.getString("first_name"),
@@ -74,7 +81,8 @@ public class Customer {
 			}
 
 			rs.close();
-			statement.close();
+			//statement.close();
+			queryStatement.close();
 			dbcon.close();
 
 		} catch (Exception ex) {

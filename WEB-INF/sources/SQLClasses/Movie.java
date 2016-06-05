@@ -39,7 +39,6 @@ public class Movie {
 		System.out.println("Hey there fucker");
 	}
 
-
 	public static List<Movie> searchMovie(String m_title, String m_year, String m_director,
 	                                String f_name, String l_name, String order, String direction) {
 		Movie movie = new Movie();
@@ -130,11 +129,13 @@ public class Movie {
 			//Context context = new InitialContext();
 			//Connection dbcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "root", "root");
 			Connection dbcon = dataSource.getConnection();
-			Statement statement = dbcon.createStatement();
-			String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id = '" + id + "')";
+			PreparedStatement queryStatement = null;
+			String query = "select * from movies where id in (select movie_id from stars_in_movies where star_id = ?)";
+			queryStatement = dbcon.prepareStatement(query);
+			queryStatement.setInt(1, id);
 
 			// Perform the query
-			ResultSet rs = statement.executeQuery(query);
+			ResultSet rs = queryStatement.executeQuery();
 
 			// Iterate through each row of rs
 			while (rs.next()) {
@@ -148,7 +149,7 @@ public class Movie {
 				movieList.add(movie);
 			}
 			rs.close();
-			statement.close();
+			queryStatement.close();
 			dbcon.close();
 
 		} catch (Exception ex) {
