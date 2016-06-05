@@ -11,7 +11,6 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-//import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -36,10 +35,9 @@ public class AuthenticationFilter implements Filter
       String username;
       String password;
 
-      if((Customer)request.getSession().getAttribute("customer") != null)
+      if((Customer)request.getSession().getAttribute("customer") != null) {
           chain.doFilter(req,res);
-      else
-      {
+      } else {
           // Output stream to STDOUT
           PrintWriter out = response.getWriter();
 
@@ -77,6 +75,7 @@ public class AuthenticationFilter implements Filter
                       {
                           System.out.println("incorrect user");
                           response.sendRedirect("/fabflix");
+
                           chain.doFilter(req,res);
                       }
                       System.out.println("good customer from param");
