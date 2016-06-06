@@ -180,11 +180,20 @@
 
   <servlet>
     <servlet-name>JMeterReportServlet</servlet-name>
-    <jsp-file>/WEB-INF/sources/JMeter-report.jsp</jsp-file>
+    <jsp-file>/WEB-INF/sources/jmeter_report.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>JMeterReportServlet</servlet-name>
-    <url-pattern>/reports/JMeter-report</url-pattern>
+    <url-pattern>/reports/jmeter_report</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ConnectionPoolingReportServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/connection_pooling.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConnectionPoolingReportServlet</servlet-name>
+    <url-pattern>/reports/connection_pooling</url-pattern>
   </servlet-mapping>
 
   <servlet>
