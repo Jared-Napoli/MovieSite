@@ -179,6 +179,15 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>JMeterReportServlet</servlet-name>
+    <jsp-file>/WEB-INF/sources/JMeter-report.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JMeterReportServlet</servlet-name>
+    <url-pattern>/reports/JMeter-report</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>CheckoutServlet</servlet-name>
     <jsp-file>/WEB-INF/sources/cart.jsp</jsp-file>
   </servlet>
